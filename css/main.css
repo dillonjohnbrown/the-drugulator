@@ -1,79 +1,62 @@
 html {
-	color: #222;
 	font-size: 1em;
 	line-height: 1.4;
 }
-
 body {
-	background-color: #000;
-	transition: all 3s ease;
-}
-/* Colors */
-.low-risk-synergy {
-	background-color: green;
-	color: white;
-}
-.low-risk-no-synergy {
-	background-color: lightgreen;
-}
-.low-risk-decrease {
-	background-color: blue;
-	color: white;
-}
-.caution {
-	background-color: yellow;
-}
-.unsafe {
-	background-color: #900C3F;
-}
-.danger {
-	background-color: #581845;
-}
-/* Stuff */
-
-
-#inputWrapper {
-	width: 100%;
-	display: block;
+	background-color: #eee;
 }
 #face {
-	font-size: 10rem;
+	font-size: 7rem;
 	margin: 2rem 0;
-}
-#summary {
-
 }
 #face,
 #summary {
 	text-align: center;
 	display: block;
 }
-select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border: none;
-	border-radius: 0;
-	padding: 20px;
-	width: 100%;
-	background: inherit;
-}
-select:focus{
-	outline: none;
-}
 
-
-body {
-	background: linear-gradient(238deg, #fd8800, #fd008f, #9700fd, #003dfd, #05c7e6, #4bd58d);
-	background-size: 1200% 1200%;
-	-webkit-animation: rainbow 15s ease infinite;
-	animation: rainbow 15s ease infinite;
+.drug-selector {
+	display: flex;
+	align-content: center;
+	overflow: scroll;
+	padding: 25px 0;
 }
-@-webkit-keyframes rainbow {
-	0%, 100% { background-position: 0% 50% }
-	50% { background-position: 100% 50% }
+.drug {
+	display: block;
+	min-width: 200px;
+	height: 200px;
+	text-align: center;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	transition: all .25s ease;
+	position: relative;
+	top: 0;
+	z-index: 1;
 }
-@keyframes rainbow {
-	0%, 100% { background-position: 0% 50% }
-	50% { background-position: 100% 50% }
+.drug:first-of-type {
+	margin-left: 0;
+}
+.drug:last-of-type {
+	margin-right: 0;
+}
+/* icons */
+.drug_logo {
+	width: 150px;
+}
+/* drug labels */
+p {
+	margin: 0;
+}
+.selected {
+	z-index: 2;
+	background-image: linear-gradient(#2E3355, #222641);
+	color: white;
+	transform: scale(1.1);
+}
+.selected path {
+	transition: all 1s ease;
+	fill: white;
 }

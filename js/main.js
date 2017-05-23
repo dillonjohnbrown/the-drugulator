@@ -28,54 +28,79 @@ var drugs = [
 	// LSD	Mushrooms	DMT 	Mescaline	DOx		NBOMes	2C-x	2C-T-x	5-MeO-xxT	Cannabis	Ketamine	MXE		DXM		Nitrous Amphetamines	MDMA	Cocaine		Caffeine	Alcohol	GHB/GBL	Opioids Tramadol	Benzodiazepines		MAOIs	SSRIs
 ];
 
-$("#select1, #select2").change(function() {
-	// Update variables when either is changed
-	var select1 = $( "#select1" ).val(),
-		select2 = $( "#select2" ).val();
+var choice_1;
+var	choice_2;
+
+$("#drug_1 .drug").click(function() {
+	$("#drug_1 .drug").removeClass("selected");
+	$(this).addClass("selected");
+
+	choice_1 = $(this).attr('data-value');
 	
-	switch ( drugs[select1][select2] ) {
+	compareDrugs();
+});
+
+$("#drug_2 .drug").click(function() {
+	$("#drug_2 .drug").removeClass("selected");
+	$(this).addClass("selected");
+
+	choice_2 = $(this).attr('data-value');
+
+	compareDrugs();
+});
+
+function compareDrugs() {
+	switch ( drugs[choice_1][choice_2] ) {
 		case 0:
 			// Same input
-			$("body").removeClass();
 			$("#face").html("😸");
 			$("#summary").html("");
 			break;
 		case 1:
 			// Low risk & synergy
-			$("body").removeClass().addClass("low-risk-synergy");
 			$("#face").html("😎");
 			$("#summary").html("Low Risk & Synergy")
 			break;
 		case 2:
 			// Low risk & no synergy
-			$("body").removeClass().addClass("low-risk-no-synergy");
 			$("#face").html("😃");
 			$("#summary").html("Low Risk & No Synergy");
 			break;
 		case 3:
 			// Low risk & decrease
-			$("body").removeClass().addClass("low-risk-decrease");
 			$("#face").html("😐");
 			$("#summary").html("Low Risk & Decrease");
 			break;
 		case 4:
 			// Caution
-			$("body").removeClass().addClass("caution");
 			$("#face").html("😥");
 			$("#summary").html("Caution");
 			break;
 		case 5:
 			// Unsafe
-			$("body").removeClass().addClass("unsafe");
 			$("#face").html("😨");
 			$("#summary").html("Unsafe");
 			break;
 		case 6:
 			// Dangerous
-			$("body").removeClass().addClass("danger");
 			$("#face").html("😲");
 			$("#summary").html("Dangerous");
 			break;
 	}
-	console.log("select1: " + select1 + " select2: " + select2);
+}
+
+$(document).keydown(function(e) {
+	switch(e.which) {
+		case 37:
+			// left
+			console.log("left");
+			
+			break;
+		case 39:
+			// right
+			console.log("right");
+			break;
+		default: return;
+	}
+	e.preventDefault();
 });

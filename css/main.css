@@ -20,6 +20,7 @@ body {
 	align-content: center;
 	overflow: scroll;
 	padding: 25px 0;
+	-webkit-overflow-scrolling: touch;
 }
 .drug {
 	display: block;

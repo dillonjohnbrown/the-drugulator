@@ -24,8 +24,8 @@ body {
 }
 .drug {
 	display: block;
-	min-width: 200px;
-	height: 200px;
+	min-width: 150px;
+	height: 150px;
 	text-align: center;
 	cursor: pointer;
 	-webkit-user-select: none;
@@ -45,7 +45,10 @@ body {
 }
 /* icons */
 .drug_logo {
-	width: 150px;
+	width: 100px;
+}
+img {
+	image-rendering: crisp-edges
 }
 /* drug labels */
 p {

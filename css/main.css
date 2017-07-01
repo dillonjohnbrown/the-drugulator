@@ -1,66 +1,151 @@
 html {
-	font-size: 1em;
-	line-height: 1.4;
+	font-size: 1.2em;
 }
 body {
-	background-color: #eee;
-}
-#face {
-	font-size: 7rem;
-	margin: 2rem 0;
-}
-#face,
-#summary {
-	text-align: center;
-	display: block;
+	background-color: #e1e1e1;
+	display: flex;
+	flex-direction: column;
 }
 
+/* container for drug choices */
 .drug-selector {
 	display: flex;
 	align-content: center;
 	overflow: scroll;
-	padding: 25px 0;
+	padding: 30px 0;
 	-webkit-overflow-scrolling: touch;
 }
+
+/* individual drugs */
 .drug {
-	display: block;
-	min-width: 150px;
-	height: 150px;
-	text-align: center;
+	display: flex;
+	align-items: center;
 	cursor: pointer;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	transition: all .25s ease;
-	position: relative;
-	top: 0;
+	transition: all .5s ease;
 	z-index: 1;
+	margin: 0 10px;
+	padding: 10px 20px;
+	border-radius: 10px;
+	background: linear-gradient(to bottom, #ffffff 0%, #ededed 100%);
 }
-.drug:first-of-type {
-	margin-left: 0;
-}
-.drug:last-of-type {
-	margin-right: 0;
-}
-/* icons */
-.drug_logo {
-	width: 100px;
-}
-img {
-	image-rendering: crisp-edges
-}
-/* drug labels */
-p {
-	margin: 0;
-}
+
+/* selected drug */
 .selected {
 	z-index: 2;
-	background-image: linear-gradient(#2E3355, #222641);
+	background-image: linear-gradient(black, #222641);
 	color: white;
 	transform: scale(1.1);
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.25);
 }
-.selected path {
-	transition: all 1s ease;
+.selected path,
+.selected polygon {
+	transition: all .5s ease;
 	fill: white;
+}
+
+/* icons */
+svg {
+	margin-right: 20px;
+	max-height: 70px;/* remove? */
+}
+
+/* drug names */
+p {
+	margin: 0;
+	white-space: nowrap;
+}
+
+/* gradients for selected drugs */
+.selected.lsd {
+	background-image: linear-gradient(gold, orangered);
+}
+.selected.mushrooms {
+	background-image: linear-gradient(crimson, brown);
+}
+.selected.dmt {
+	background-image: linear-gradient(purple, rebeccapurple);
+}
+.selected.mescaline {
+	background-image: linear-gradient(green, pink);
+}
+.selected.dox {
+	background-image: linear-gradient(turquoise, brown);
+}
+.selected.nbomes {
+	background-image: linear-gradient(blueviolet, aquamarine);
+}
+.selected.c-x {
+	background-image: linear-gradient(darkorchid, crimson);
+}
+.selected.c-t-x {
+	background-image: linear-gradient(lightsalmon, mediumturquoise);
+}
+.selected.meo-xxt {
+	background-image: linear-gradient(deeppink, darkcyan);
+}
+.selected.cannabis {
+	background-image: linear-gradient(lightgreen, forestgreen);
+}
+.selected.ketamine {
+	background-image: linear-gradient(midnightblue, black);
+}
+.selected.mxe {
+	background-image: linear-gradient(moccasin, lightslategrey);
+}
+.selected.dxm {
+	background-image: linear-gradient(deeppink, firebrick);
+}
+.selected.nitrous {
+	background-image: linear-gradient(cyan, blue);
+}
+.selected.amphetamines {
+	background-image: linear-gradient(yellow, tomato);
+}
+.selected.mdma {
+	background-image: linear-gradient(gold, goldenrod);
+}
+.selected.cocaine {
+	background-image: linear-gradient(honeydew, lightsteelblue);
+}
+.selected.caffeine {
+	background-image: linear-gradient(peru, saddlebrown);
+}
+.selected.alcohol {
+	background-image: linear-gradient(khaki, brown);
+}
+.selected.ghb-gbl {
+	background-image: linear-gradient(silver, black);
+}
+.selected.opioids {
+	background-image: linear-gradient(powderblue, skyblue);
+}
+.selected.tramadol {
+	background-image: linear-gradient(paleturquoise, mediumturquoise);
+}
+.selected.benzodiazepines {
+	background-image: linear-gradient(mistyrose, mediumorchid);
+}
+.selected.maois {
+	background-image: linear-gradient(mediumslateblue, midnightblue);
+}
+.selected.ssris {
+	background-image: linear-gradient(cornflowerblue, lime);
+}
+
+/* RESULTS */
+.result {
+
+}
+#face {
+	font-size: 7rem;
+	margin: 0;
+}
+#face,
+#summary {
+	text-align: center;
+	display: block;
 }

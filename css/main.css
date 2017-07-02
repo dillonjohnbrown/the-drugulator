@@ -2,7 +2,6 @@ html {
 	font-size: 1.2em;
 }
 body {
-	background-color: #e1e1e1;
 	display: flex;
 	flex-direction: column;
 }
@@ -14,6 +13,7 @@ body {
 	overflow: scroll;
 	padding: 30px 0;
 	-webkit-overflow-scrolling: touch;
+	background-color: #e1e1e1;
 }
 
 /* individual drugs */
@@ -138,14 +138,38 @@ p {
 
 /* RESULTS */
 .result {
-
+	background: white;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-#face {
-	font-size: 7rem;
+.result__summary {
+	font-weight: bold;
+	font-size: 30px;
+}
+[class^=case__] {
+	display: none;
+}
+.results__text {
+	max-width: 500px;
+}
+.results__text p {
+	white-space: normal;
+}
+.results__text h1 {
+	margin-top: 0;
+}
+.results__emoji {
+	margin-right: 50px;
+}
+.results__emoji h1 {
+	font-size: 5rem;
 	margin: 0;
 }
-#face,
-#summary {
-	text-align: center;
-	display: block;
+
+@media only screen and (max-width: 736px) {
+	.result {
+		display: block;
+	}
 }

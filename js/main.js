@@ -49,42 +49,46 @@ $("#drug_2 .drug").click(function() {
 	compareDrugs();
 });
 
+function hide() {
+	$("[class^=case__]").hide();
+}
+
 function compareDrugs() {
 	switch ( drugs[choice_1][choice_2] ) {
 		case 0:
 			// Same input
-			$("#face").html("😸");
-			$("#summary").html("");
+			hide();
+			$(".case__0").show();
 			break;
 		case 1:
 			// Low risk & synergy
-			$("#face").html("😎");
-			$("#summary").html("Low Risk & Synergy")
+			hide();
+			$(".case__1").show();
 			break;
 		case 2:
 			// Low risk & no synergy
-			$("#face").html("😃");
-			$("#summary").html("Low Risk & No Synergy");
+			hide();
+			$(".case__2").show();
 			break;
 		case 3:
 			// Low risk & decrease
-			$("#face").html("😐");
-			$("#summary").html("Low Risk & Decrease");
+			hide();
+			$(".case__3").show();
 			break;
 		case 4:
 			// Caution
-			$("#face").html("😥");
-			$("#summary").html("Caution");
+			hide();
+			$(".case__4").show();
 			break;
 		case 5:
 			// Unsafe
-			$("#face").html("😨");
-			$("#summary").html("Unsafe");
+			hide();
+			$(".case__5").show();
 			break;
 		case 6:
 			// Dangerous
-			$("#face").html("😲");
-			$("#summary").html("Dangerous");
+			hide();
+			$(".case__6").show();
 			break;
 	}
 }

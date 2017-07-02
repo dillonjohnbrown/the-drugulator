@@ -156,6 +156,7 @@ p {
 }
 .results__text p {
 	white-space: normal;
+	line-height: 1.5;
 }
 .results__text h1 {
 	margin-top: 0;
@@ -164,7 +165,7 @@ p {
 	margin-right: 50px;
 }
 .results__emoji h1 {
-	font-size: 5rem;
+	font-size: 4rem;
 	margin: 0;
 }
 

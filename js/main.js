@@ -108,3 +108,14 @@ $(document).keydown(function(e) {
 	}
 	e.preventDefault();
 });
+
+// Modal
+var modal = $("#modal");
+
+$("#modal-close").click(function() {
+	modal.toggleClass("hidden");
+});
+
+$("#modal-open").click(function() {
+	modal.toggleClass("hidden");
+});

@@ -8,7 +8,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
-		<!-- Place favicon.ico in the root directory -->
 
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
@@ -348,7 +347,7 @@
 				</svg>
 				<p>SSRIs</p>
 			</div>
-		</div>
+		</div><!-- /#drug_1 -->
 
 		<div id="drug_2" class="drug-selector">
 			<div class="drug lsd" data-value="0">
@@ -683,7 +682,7 @@
 				</svg>
 				<p>SSRIs</p>
 			</div>
-		</div>
+		</div><!-- /#drug_2  -->
 
 		<div id="result" class="result">
 			<div id="results__emoji" class="results__emoji">
@@ -716,6 +715,22 @@
 				<p class="case__6">These combinations are considered extremely harmful and should always be avoided. Reactions to these drugs taken in combination are highly unpredictable and have a potential to cause death.</p>
 			</div><!-- /#results__text -->
 		</div><!-- /#result -->
+
+		<button id="modal-open" class="info">?</button>
+
+		<div id="modal" class="modal hidden">
+			<div class="modal__content">
+				<h1>What is this?</h1>
+				<p>This site is meant as a quick reference guide for using two drugs at a time. Additional research must be done before using or combining any drugs.</p>
+
+				<p>This site was influenced by a <a href="http://wiki.tripsit.me/wiki/Drug_combinations">difficult to read drug combination chart</a> from TripSit.com.</p>
+
+				<h1>Icons</h1>
+				<p>The icons are just for fun, illustrative purposes &mdash; not meant to represent any substance.</p>
+			</div>
+
+			<button id="modal-close" class="modal-close info pointer">&#x2716;</button>
+		</div>
 
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>

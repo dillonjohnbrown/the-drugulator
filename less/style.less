@@ -1,0 +1,229 @@
+html {
+	font-size: 1.2em;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+p {
+	line-height: 1.5;
+}
+a {
+	background-color: transparent;
+	color: inherit;
+	text-decoration: none;
+	transition: background .15s cubic-bezier(0.33, 0.66, 0.66, 1);
+	border-bottom: 5px solid deepskyblue;
+	box-shadow: inset 0 -3px 0 deepskyblue;
+	:hover {
+		background-color: deepskyblue;
+		color: white;
+	}
+}
+::selection {
+	background: black;
+	color: white;
+}
+
+/* container for drug choices */
+.drug-selector {
+	display: flex;
+	align-content: center;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+	padding: 20px 0;
+	background-color: #656565;
+	&:first-of-type {
+		background-color: #7f7f7f;
+	}
+}
+
+/* individual drugs */
+.drug {
+	cursor: pointer;
+	user-select: none;
+	transition: all .5s ease;
+	z-index: 1;
+	margin: 0 10px;
+	padding: 10px 20px;
+	border-radius: 10px;
+	background: white;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+	/* dug names */
+	p {
+		margin: 0;
+		white-space: nowrap;
+	}
+}
+
+/* little + between drug-selectors */
+.plus {
+	font-size: 25px;
+	font-weight: bold;
+	position: absolute;
+	top: 72px;
+	left: calc(50% - 7px);
+	color: white;
+	z-index: 3;
+}
+
+/* selected drug */
+.selected {
+	z-index: 2;
+	color: white;
+	filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.25));
+    animation-duration: 0.75s;
+    animation-name: bounceIn;
+	/* gradients for selected drugs */
+	&.lsd {
+		background-image: linear-gradient(gold, orangered);
+	}
+	&.mushrooms {
+		background-image: linear-gradient(crimson, brown);
+	}
+	&.dmt {
+		background-image: linear-gradient(purple, rebeccapurple);
+	}
+	&.mescaline {
+		background-image: linear-gradient(green, pink);
+	}
+	&.dox {
+		background-image: linear-gradient(turquoise, brown);
+	}
+	&.nbomes {
+		background-image: linear-gradient(blueviolet, aquamarine);
+	}
+	&.c-x {
+		background-image: linear-gradient(darkorchid, crimson);
+	}
+	&.c-t-x {
+		background-image: linear-gradient(lightsalmon, mediumturquoise);
+	}
+	&.meo-xxt {
+		background-image: linear-gradient(deeppink, darkcyan);
+	}
+	&.cannabis {
+		background-image: linear-gradient(lightgreen, forestgreen);
+	}
+	&.ketamine {
+		background-image: linear-gradient(midnightblue, black);
+	}
+	&.mxe {
+		background-image: linear-gradient(moccasin, lightslategrey);
+	}
+	&.dxm {
+		background-image: linear-gradient(deeppink, firebrick);
+	}
+	&.nitrous {
+		background-image: linear-gradient(cyan, blue);
+	}
+	&.amphetamines {
+		background-image: linear-gradient(yellow, tomato);
+	}
+	&.mdma {
+		background-image: linear-gradient(gold, goldenrod);
+	}
+	&.cocaine {
+		background-image: linear-gradient(honeydew, lightsteelblue);
+	}
+	&.caffeine {
+		background-image: linear-gradient(peru, saddlebrown);
+	}
+	&.alcohol {
+		background-image: linear-gradient(khaki, brown);
+	}
+	&.ghb-gbl {
+		background-image: linear-gradient(silver, black);
+	}
+	&.opioids {
+		background-image: linear-gradient(powderblue, skyblue);
+	}
+	&.tramadol {
+		background-image: linear-gradient(paleturquoise, mediumturquoise);
+	}
+	&.benzodiazepines {
+		background-image: linear-gradient(mistyrose, mediumorchid);
+	}
+	&.maois {
+		background-image: linear-gradient(mediumslateblue, midnightblue);
+	}
+	&.ssris {
+		background-image: linear-gradient(cornflowerblue, lime);
+	}
+}
+
+/*
+	RESULTS
+*/
+.result {
+	background: white;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 300px;
+	transition: all 2s ease;
+}
+.results__text {
+	max-width: 500px;
+	h1 {
+		margin-top: 0;
+	}
+}
+.emoji {
+	margin: 0 50px 0 0;
+	font-size: 3rem;
+}
+[class^=case__] {
+	display: none;
+}
+.case__x {
+	display: block;
+}
+
+.invert {
+	background: black;
+	color: white;
+}
+
+@media only screen and (max-width: 736px) {
+	.result {
+		display: block;
+	}
+}
+
+/*
+	ANIMATIONS
+*/
+@keyframes bounceIn {
+	from,
+	20%,
+	40%,
+	60%,
+	80%,
+	to {
+    	animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	0% {
+		opacity: 0;
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+	20% {
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+	40% {
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+	60% {
+		opacity: 1;
+		transform: scale3d(1.03, 1.03, 1.03);
+	}
+	80% {
+		transform: scale3d(0.97, 0.97, 0.97);
+	}
+	to {
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+}

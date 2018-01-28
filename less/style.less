@@ -25,7 +25,7 @@ a {
 	color: white;
 }
 
-/* container for drug choices */
+/* containers for drugs */
 .drug-selector {
 	display: flex;
 	align-content: center;
@@ -36,6 +36,17 @@ a {
 	&:first-of-type {
 		background-color: #7f7f7f;
 	}
+}
+
+/* little + between drug-selectors */
+.plus {
+	font-size: 25px;
+	font-weight: bold;
+	position: absolute;
+	top: 72px;
+	left: calc(50% - 7px);
+	color: white;
+	z-index: 3;
 }
 
 /* individual drugs */
@@ -50,22 +61,11 @@ a {
 	background: white;
     animation-duration: 1s;
     animation-fill-mode: both;
-	/* dug names */
+	/* drug names */
 	p {
 		margin: 0;
 		white-space: nowrap;
 	}
-}
-
-/* little + between drug-selectors */
-.plus {
-	font-size: 25px;
-	font-weight: bold;
-	position: absolute;
-	top: 72px;
-	left: calc(50% - 7px);
-	color: white;
-	z-index: 3;
 }
 
 /* selected drug */

@@ -13,7 +13,7 @@ body {
 	overflow: scroll;
 	padding: 20px 0;
 	-webkit-overflow-scrolling: touch;
-	background-color: #c4c4c4;
+	background-color: #7f7f7f;
 }
 
 /* individual drugs */
@@ -141,6 +141,10 @@ body {
 	min-height: 300px;
 	transition: all 2s ease;
 }
+.invert {
+	background: black;
+	color: white;
+}
 .result__summary {
 	font-weight: bold;
 	font-size: 30px;
@@ -189,10 +193,6 @@ a:hover {
 ::selection {
 	background: black;
 	color: white;
-}
-.invert {
-	-webkit-filter: invert(100%);
-	filter: invert(100%);
 }
 
 /*

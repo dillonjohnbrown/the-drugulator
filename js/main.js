@@ -93,12 +93,19 @@ function compareDrugs() {
 	}
 }
 
+// Modal
+var modal = $("#modal");
+
+$("#modal-close, #modal-open").click(function() {
+	modal.toggleClass("hidden");
+});
+
+// TODO: Make it usable with just arrow keys
 $(document).keydown(function(e) {
 	switch(e.which) {
 		case 37:
 			// left
 			console.log("left");
-			
 			break;
 		case 39:
 			// right
@@ -107,15 +114,4 @@ $(document).keydown(function(e) {
 		default: return;
 	}
 	e.preventDefault();
-});
-
-// Modal
-var modal = $("#modal");
-
-$("#modal-close").click(function() {
-	modal.toggleClass("hidden");
-});
-
-$("#modal-open").click(function() {
-	modal.toggleClass("hidden");
 });

@@ -139,7 +139,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	min-height: 300px;
-	transition: all 5s ease;
+	transition: all 2s ease;
 }
 .result__summary {
 	font-weight: bold;

@@ -25,6 +25,7 @@ body {
 	top: 72px;
 	left: calc(50% - 7px);
 	color: white;
+	z-index: 3;
 }
 
 /* individual drugs */

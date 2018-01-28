@@ -42,7 +42,7 @@ body {
 	margin: 0 10px;
 	padding: 10px 20px;
 	border-radius: 10px;
-	background: linear-gradient(to bottom, #ffffff 0%, #ededed 100%);
+	background: white;
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;

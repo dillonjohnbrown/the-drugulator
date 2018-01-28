@@ -139,6 +139,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	min-height: 300px;
+	transition: all 5s ease;
 }
 .result__summary {
 	font-weight: bold;
@@ -147,68 +148,30 @@ body {
 [class^=case__] {
 	display: none;
 }
+.case__x {
+	display: block;
+}
 .results__text {
 	max-width: 500px;
-}
-p {
-	line-height: 1.5;
 }
 .results__text h1 {
 	margin-top: 0;
 }
+p {
+	line-height: 1.5;
+}
 .emoji {
 	margin: 0 50px 0 0;
-	font-size: 4rem;
+	font-size: 3rem;
 }
 
 @media only screen and (max-width: 736px) {
 	.result {
 		display: block;
 	}
-	.modal {
-		width: inherit !important;
-	}
 }
 .pointer {
 	cursor: pointer;
-}
-.info {
-	background: #e1e1e1;
-	color: black;
-	font-weight: bold;
-	height: 50px;
-	width: 50px;
-	margin: 50px auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50px;
-	text-decoration: none;
-}
-.modal {
-	padding: 20px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-	background: white;
-	z-index: 3;
-	overflow: scroll;
-}
-.modal.hidden {
-	display: none;
-}
-.modal__content {
-	max-width: 500px;
-	margin: 0 auto;
-}
-button {
-	border: none;
-}
-button:hover {
-	background: red;
-	color: white;
 }
 
 a {
@@ -226,6 +189,10 @@ a:hover {
 ::selection {
 	background: black;
 	color: white;
+}
+.invert {
+	-webkit-filter: invert(100%);
+	filter: invert(100%);
 }
 
 /*

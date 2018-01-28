@@ -13,7 +13,20 @@ body {
 	overflow: scroll;
 	padding: 20px 0;
 	-webkit-overflow-scrolling: touch;
+	background-color: #656565;
+}
+.drug-selector:first-of-type {
 	background-color: #7f7f7f;
+}
+.drug-selector::after {
+	content: "+";
+	display: block;
+	font-size: 25px;
+	font-weight: bold;
+	position: absolute;
+	top: 72px;
+	left: calc(50% - 7px);
+	color: white;
 }
 
 /* individual drugs */

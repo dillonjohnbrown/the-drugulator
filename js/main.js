@@ -50,7 +50,7 @@ $("#drug_2 .drug").click(function() {
 });
 
 function hide() {
-	$("[class^=case__]").hide();
+	$("[id^=case__]").hide();
 }
 
 function invert() {
@@ -66,43 +66,43 @@ function compareDrugs() {
 			// Same input
 			hide();
 			unInvert()
-			$(".case__0").show();
+			$("#case__0").show();
 			break;
 		case 1:
 			// Low risk & synergy
 			hide();
 			unInvert()
-			$(".case__1").show();
+			$("#case__1").show();
 			break;
 		case 2:
 			// Low risk & no synergy
 			hide();
 			unInvert()
-			$(".case__2").show();
+			$("#case__2").show();
 			break;
 		case 3:
 			// Low risk & decrease
 			hide();
 			unInvert()
-			$(".case__3").show();
+			$("#case__3").show();
 			break;
 		case 4:
 			// Caution
 			hide();
 			unInvert()
-			$(".case__4").show();
+			$("#case__4").show();
 			break;
 		case 5:
 			// Unsafe
 			hide();
 			unInvert()
-			$(".case__5").show();
+			$("#case__5").show();
 			break;
 		case 6:
 			// Dangerous
 			hide();
 			invert()
-			$(".case__6").show();
+			$("#case__6").show();
 			break;
 	}
 }

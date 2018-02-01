@@ -4,6 +4,7 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
+	background: linear-gradient(135deg, Indigo 0%, MidnightBlue 100%);
 }
 p {
 	line-height: 1.5;
@@ -22,21 +23,25 @@ a {
 	align-content: center;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
-	padding: 20px 0;
-	background-color: #656565;
+	padding: 25px 0;
 	&:first-of-type {
-		background-color: #7f7f7f;
 		border-bottom: 2px solid white;
 	}
 }
-
+section {
+	width: 100%;
+	transition: all 5s ease;
+	h1 {
+		margin: 0;
+	}
+}
 /* little + between drug-selectors */
 .plus {
 	position: absolute;
-	top: 72px;
+	top: 81px;
 	left: calc(50% - 17px);
 	z-index: 3;
-	background: red;
+	background: rebeccapurple;
 	border-radius: 50%;
 	padding: 7px;
 	border: 2px solid white;
@@ -65,7 +70,7 @@ a {
 .selected {
 	z-index: 2;
 	color: white;
-	filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.25));
+	filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
     animation-duration: 0.75s;
     animation-name: bounceIn;
 	/* gradients for selected drugs */
@@ -119,6 +124,7 @@ a {
 	}
 	&.cocaine {
 		background-image: linear-gradient(honeydew, lightsteelblue);
+		color: black;
 	}
 	&.caffeine {
 		background-image: linear-gradient(peru, saddlebrown);
@@ -147,7 +153,8 @@ a {
 }
 
 main {
-	background: white;
+	background: transparent;
+	color: white;
 	padding: 20px;
 	display: flex;
 	align-items: start;
@@ -155,22 +162,35 @@ main {
 	min-height: 300px;
 	transition: all 2s ease;
 }
-section h1 {
-	margin: 0;
-}
 .emoji {
 	font-size: 3rem;
 }
-[id^=case__] {
+.result {
 	display: none;
-}
-.case__x {
-	display: block;
-}
-
-.invert {
-	background: black;
-	color: white;
+	&__intro {
+		display: block;
+	}
+	&__same {
+		
+	}
+	&__low-and-synergy {
+		
+	}
+	&__low {
+		
+	}
+	&__low-and-decrease {
+		
+	}
+	&__caution {
+		
+	}
+	&__unsafe {
+		
+	}
+	&__dangerous {
+	
+	}
 }
 
 /*
@@ -221,9 +241,10 @@ section h1 {
 	}
 	.drug-selector {
 		height: 100vh;
-		padding: 0 10px;
+		padding: 0 20px;
 		flex-direction: column;
 		&:first-of-type {
+			border-bottom: none;
 			border-right: 2px solid white;
 		}
 	}
@@ -232,9 +253,17 @@ section h1 {
 	}
 	.plus {
 		top: calc(50% - 17px);
-		left: 209px;
+		left: 229px;
 	}
-	section p {
-		max-width: 400px;
+	section {
+		border-radius: 10px;
+		padding: 40px;
+		background: rgba(25, 25, 112, 0.8);
+		max-width: 700px;
+	}
+	main {
+		color: white;
+		width: 100%;
+		padding: 20px 20px 20px 0;
 	}
 }

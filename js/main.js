@@ -28,21 +28,22 @@ var drugs = [
 	// LSD	Mushrooms	DMT 	Mescaline	DOx		NBOMes	2C-x	2C-T-x	5-MeO-xxT	Cannabis	Ketamine	MXE		DXM		Nitrous Amphetamines	MDMA	Cocaine		Caffeine	Alcohol	GHB/GBL	Opioids Tramadol	Benzodiazepines		MAOIs	SSRIs
 ];
 
+// Drugs
 var choice_1;
 var	choice_2;
 
 $("#drug_1 .drug").click(function() {
-	$("#drug_1 .drug").removeClass("selected");
-	$(this).addClass("selected");
+	$("#drug_1 .drug").removeClass("drug__selected");
+	$(this).addClass("drug__selected");
 
 	choice_1 = $(this).attr('data-value');
-	
+
 	compareDrugs();
 });
 
 $("#drug_2 .drug").click(function() {
-	$("#drug_2 .drug").removeClass("selected");
-	$(this).addClass("selected");
+	$("#drug_2 .drug").removeClass("drug__selected");
+	$(this).addClass("drug__selected");
 
 	choice_2 = $(this).attr('data-value');
 
@@ -93,19 +94,128 @@ function compareDrugs() {
 	}
 }
 
+// Tabs
+$("#tabs_1 .tab").click(function() {
+  // Visual changes
+	$("#tabs_1 .tab").removeClass("tab__selected");
+	$(this).addClass("tab__selected");
+});
 
-// TODO: Make it usable with just arrow keys
-$(document).keydown(function(e) {
-	switch(e.which) {
-		case 37:
-			// left
-			console.log("left");
-			break;
-		case 39:
-			// right
-			console.log("right");
-			break;
-		default: return;
+$("#tabs_2 .tab").click(function() {
+	// Visual changes
+	$("#tabs_2 .tab").removeClass("tab__selected");
+	$(this).addClass("tab__selected");
+});
+
+$.fn.isOnScreen = function() {
+    var win = $(window);
+
+    var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+    };
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+
+    var bounds = this.offset();
+    bounds.right = bounds.left + this.outerWidth();
+    bounds.bottom = bounds.top + this.outerHeight();
+
+    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+};
+
+$("#drug_1").scroll(function() {
+	var number__popularOnScreen = 0;
+	var number__pharmaceuticalOnScreen = 0;
+	var number__researchChemicalOnScreen = 0;
+
+	$("#drug_1 .popular").each(function() {
+	  if ( $(this).isOnScreen() ) {
+	    number__popularOnScreen++;
+	  } else {
+			number__popularOnScreen--;
+		}
+	});
+
+	$("#drug_1 .pharmaceutical").each(function() {
+		if ( $(this).isOnScreen() ) {
+			number__pharmaceuticalOnScreen++;
+		} else {
+			number__pharmaceuticalOnScreen--;
+		}
+	});
+
+	$("#drug_1 .research-chemical").each(function() {
+	  if ( $(this).isOnScreen() ) {
+	    number__researchChemicalOnScreen++;
+	  } else {
+			number__researchChemicalOnScreen--;
+		}
+	});
+
+	if (number__pharmaceuticalOnScreen > -3) {
+		$("#tabs_1 .tab__pharmaceuticals").addClass("tab__selected");
+	} else {
+		$("#tabs_1 .tab__pharmaceuticals").removeClass("tab__selected");
 	}
-	e.preventDefault();
+
+	if (number__researchChemicalOnScreen > -6) {
+		$("#tabs_1 .tab__research-chemical").addClass("tab__selected");
+	} else {
+		$("#tabs_1 .tab__research-chemical").removeClass("tab__selected");
+	}
+
+	if (number__popularOnScreen > -16) {
+		$("#tabs_1 .tab__popular-drug").addClass("tab__selected");
+	} else {
+		$("#tabs_1 .tab__popular-drug").removeClass("tab__selected");
+	}
+});
+
+$("#drug_2").scroll(function() {
+	var number__popularOnScreen = 0;
+	var number__pharmaceuticalOnScreen = 0;
+	var number__researchChemicalOnScreen = 0;
+
+	$("#drug_2 .popular").each(function() {
+	  if ( $(this).isOnScreen() ) {
+	    number__popularOnScreen++;
+	  } else {
+			number__popularOnScreen--;
+		}
+	});
+
+	$("#drug_2 .pharmaceutical").each(function() {
+		if ( $(this).isOnScreen() ) {
+			number__pharmaceuticalOnScreen++;
+		} else {
+			number__pharmaceuticalOnScreen--;
+		}
+	});
+
+	$("#drug_2 .research-chemical").each(function() {
+	  if ( $(this).isOnScreen() ) {
+	    number__researchChemicalOnScreen++;
+	  } else {
+			number__researchChemicalOnScreen--;
+		}
+	});
+
+	if (number__pharmaceuticalOnScreen > -3) {
+		$("#tabs_2 .tab__pharmaceuticals").addClass("tab__selected");
+	} else {
+		$("#tabs_2 .tab__pharmaceuticals").removeClass("tab__selected");
+	}
+
+	if (number__researchChemicalOnScreen > -6) {
+		$("#tabs_2 .tab__research-chemical").addClass("tab__selected");
+	} else {
+		$("#tabs_2 .tab__research-chemical").removeClass("tab__selected");
+	}
+
+	if (number__popularOnScreen > -16) {
+		$("#tabs_2 .tab__popular-drug").addClass("tab__selected");
+	} else {
+		$("#tabs_2 .tab__popular-drug").removeClass("tab__selected");
+	}
 });

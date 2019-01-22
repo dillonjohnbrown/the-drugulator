@@ -14,13 +14,41 @@ a {
 	color: white;
 }
 
+.tabs {
+	display: flex;
+	align-content: center;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+	background-color: OrangeRed;
+	margin: 10px;
+	border-radius: 30px;
+	.tab {
+		cursor: pointer;
+		user-select: none;
+		transition: all .5s ease;
+		z-index: 1;
+		margin: 3px;
+		font-size: 0.6rem;
+	  animation-duration: 1s;
+	  animation-fill-mode: both;
+		white-space: nowrap;
+		padding: 6px 10px;
+		border-radius: 20px;
+		color: white;
+	}
+}
+.tab__selected {
+	background-color: white;
+	color: OrangeRed !important;
+}
+
 /* containers for drugs */
 .drug-selector {
 	display: flex;
 	align-content: center;
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
-	padding: 25px 10px;
+	padding: 10px;
 	background-color: white;
 	&:first-of-type {
 		border-bottom: 6px solid OrangeRed;
@@ -36,7 +64,7 @@ section {
 /* little + between drug-selectors */
 .plus {
 	position: absolute;
-	top: 73px;
+	top: 43px;
 	left: calc(50% - 17px);
 	z-index: 3;
 	background: OrangeRed;
@@ -53,8 +81,8 @@ section {
 	z-index: 1;
 	margin: 0 10px;
 	font-size: 1.75rem;
-    animation-duration: 1s;
-    animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 	/* drug names */
 	p {
 		margin: 0;
@@ -64,7 +92,7 @@ section {
 }
 
 /* selected drug */
-.selected {
+.drug__selected {
 	z-index: 2;
 	color: OrangeRed;
     animation-duration: 1s;
@@ -90,25 +118,25 @@ main {
 		display: block;
 	}
 	&__same {
-		
+
 	}
 	&__low-and-synergy {
-		
+
 	}
 	&__low {
-		
+
 	}
 	&__low-and-decrease {
-		
+
 	}
 	&__caution {
-		
+
 	}
 	&__unsafe {
-		
+
 	}
 	&__dangerous {
-	
+
 	}
 }
 

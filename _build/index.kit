@@ -1,92 +1,49 @@
-<!doctype html>
-<html class="no-js" lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Drug Combos</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-		<link rel="apple-touch-icon" href="apple-touch-icon.png?1">
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Drug Combos</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<main role="main" id="result">
-			<!--Intro -->
-			<section id="case__x" class="result result__intro">
-				<h1>What is this?</h1>
-				<p>This site is meant as a quick reference guide for using two drugs at a time. Additional research must be done before using or combining any drugs. I'm not responsible if you use this and bad things happen.</p>
-				<p>This site used data from and was influenced by a <a href="http://wiki.tripsit.me/wiki/Drug_combinations">difficult to read drug combination chart</a> from TripSit.com.</p>
-			</section>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-			<!-- Same input -->
-			<section id="case__0" class="result result__same">
-				<h1 class="emoji">😸</h1>
-				<h1>Have fun</h1>
-				<p>Gooooood loooookin' son!</p>
-			</section>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/style.css">
 
-			<!-- Low risk & synergy -->
-			<section id="case__1" class="result result__low-and-synergy">
-				<h1 class="emoji">😎</h1>
-				<h1>Low Risk & Synergy</h1>
-				<p>These drugs work together to cause an effect greater than the sum of its parts, and they aren't likely to cause an adverse or undesirable reaction when used carefully. Additional research should always be done before combining drugs.</p>
-			</section>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
-			<!-- Low risk & no synergy -->
-			<section id="case__2" class="result result__low">
-				<h1 class="emoji">😃</h1>
-				<h1>Low Risk & No Synergy</h1>
-				<p>Effects are just additive. The combination is unlikely to cause any adverse or undesirable reaction beyond those that might ordinarily be expected from these drugs.</p>
-			</section>
+</head>
+<body class="container">
+	<main role="main" id="result" class="row">
+		<!-- @include components/_results.kit -->
+	</main>
 
-			<!-- Low risk & decrease -->
-			<section id="case__3" class="result result__low-and-decrease">
-				<h1 class="emoji">😐</h1>
-				<h1>Low Risk & Decrease</h1>
-			</section>
+	<footer class="row">
+		<div id="drug_1" class="drug-selector">
+			<!-- @include components/_drugs.kit -->
+		</div>
 
-			<!-- Caution -->
-			<section id="case__4" class="result result__caution">
-				<h1 class="emoji">😥</h1>
-				<h1>Caution</h1>
-				<p>These combinations are not usually physically harmful, but may produce undesirable effects, such as physical discomfort or overstimulation. Extreme use may cause physical health issues. Synergistic effects may be unpredictable. Care should be taken when choosing to use this combination.</p>
-			</section>
+		<!-- <svg class="plus" width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		    <title>+</title>
+		    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		        <polygon id="+" fill="#ffffff" points="0.214 9.84087657 0.214 6.96934005 6.16877387 6.96934005 6.16877387 0.924 9.25922613 0.924 9.25922613 6.96934005 15.214 6.96934005 15.214 9.84087657 9.25922613 9.84087657 9.25922613 15.924 6.16877387 15.924 6.16877387 9.84087657"></polygon>
+		    </g>
+		</svg> -->
 
-			<!-- Unsafe -->
-			<section id="case__5" class="result result__unsafe">
-				<h1 class="emoji">😨</h1>
-				<h1>Unsafe</h1>
-				<p>There is considerable risk of physical harm when taking these combinations, they should be avoided where possible.</p>
-			</section>
+		<div id="drug_2" class="drug-selector">
+			<!-- @include components/_drugs.kit -->
+		</div>
+	</footer>
 
-			<!-- Dangerous -->
-			<section id="case__6" class="result result__dangerous">
-				<h1 class="emoji">💀</h1>
-				<h1>Dangerous</h1>
-				<p>These combinations are considered extremely harmful and should always be avoided. Reactions to these drugs taken in combination are highly unpredictable and have a potential to cause death.</p>
-			</section>
-		</main>
-
-		<footer>
-			<div id="drug_1" class="drug-selector">
-				<!-- @include components/_drugs.kit -->
-			</div>
-
-			<!-- <svg class="plus" width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-			    <title>+</title>
-			    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-			        <polygon id="+" fill="#ffffff" points="0.214 9.84087657 0.214 6.96934005 6.16877387 6.96934005 6.16877387 0.924 9.25922613 0.924 9.25922613 6.96934005 15.214 6.96934005 15.214 9.84087657 9.25922613 9.84087657 9.25922613 15.924 6.16877387 15.924 6.16877387 9.84087657"></polygon>
-			    </g>
-			</svg> -->
-
-			<div id="drug_2" class="drug-selector">
-				<!-- @include components/_drugs.kit -->
-			</div>
-		</footer>
-
-		<script type="text/javascript" src="js/scripts.js"></script>
-	</body>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</body>
 </html>

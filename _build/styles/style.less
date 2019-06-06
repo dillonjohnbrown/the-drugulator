@@ -1,5 +1,8 @@
-html {
-	font-family: -apple-system, BlinkMacSystemFont, Helvetica, "Segoe UI";
+@import "vendor/normalize.less";
+@import "vendor/skeleton.less";
+
+body {
+	font-family: system, -apple-system, "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 }
 a {
 	color: inherit;
@@ -30,7 +33,6 @@ h1 {
 .drug {
 	cursor: pointer;
 	user-select: none;
-	transition: all .5s ease;
 	z-index: 1;
 	margin: 0;
 	padding: 5px 10px;

@@ -13,9 +13,6 @@ a {
 h1 {
 	margin: 0;
 }
-section {
-	transition: all 5s ease;
-}
 
 /* little + between drug-selectors */
 .plus {
@@ -47,7 +44,6 @@ section {
 	z-index: 2;
 	color: OrangeRed;
     animation-duration: 1s;
-    animation-name: bounceIn;
 }
 
 main {
@@ -73,7 +69,7 @@ main {
 }
 .result {
 	display: none;
-	
+
 	p {
 		line-height: 1.5;
 	}
@@ -139,49 +135,6 @@ footer {
     width: 50%;
     display: inline-block;
 	background-color: white;
-}
-
-
-
-
-
-
-
-
-
-/*
-	ANIMATIONS
-*/
-@keyframes bounceIn {
-	from,
-	20%,
-	40%,
-	60%,
-	80%,
-	to {
-    	animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-	}
-	0% {
-		opacity: 0;
-		transform: scale3d(0.3, 0.3, 0.3);
-	}
-	20% {
-		transform: scale3d(1.1, 1.1, 1.1);
-	}
-	40% {
-		transform: scale3d(0.9, 0.9, 0.9);
-	}
-	60% {
-		opacity: 1;
-		transform: scale3d(1.03, 1.03, 1.03);
-	}
-	80% {
-		transform: scale3d(0.97, 0.97, 0.97);
-	}
-	to {
-		opacity: 1;
-		transform: scale3d(1, 1, 1);
-	}
 }
 
 /*

@@ -34,190 +34,96 @@ var drugs = [
 var choice_1;
 var	choice_2;
 
-$("#drug_1 .drug").click(function() {
-	$("#drug_1 .drug").removeClass("drug__selected");
-	$(this).addClass("drug__selected");
+// Column 1
+// left column checkboxes (column 1)
+$("input:first-of-type").click(function() {
+	// Enable all column 1 checkboxes
+	// Uncheck other checkboxes in first column
+	$("input:first-of-type")
+		.prop('disabled', false)
+		.not(this).prop('checked', false);
 
-	choice_1 = $(this).attr('data-value');
+	// Get the number of the drug
+	choice_1 = $(this).parent().attr('data-value');
 
+	// Compare
 	compareDrugs();
+
+	// Disable this checkbox so it can't be deselected
+	$(this).prop('disabled', true);
 });
 
-$("#drug_2 .drug").click(function() {
-	$("#drug_2 .drug").removeClass("drug__selected");
-	$(this).addClass("drug__selected");
+// Column 2
+// right column checkboxes (column 2)
+$("input:last-of-type").click(function() {
+	// Enable all column 2 checkboxes
+	// Uncheck other checkboxes in second column
+	$("input:last-of-type")
+		.prop('disabled', false)
+		.not(this).prop('checked', false);
 
-	choice_2 = $(this).attr('data-value');
+	// Get the number of the drug
+	choice_2 = $(this).parent().attr('data-value');
 
+	// Compare
 	compareDrugs();
+
+	// Disable this checkbox so it can't be deselected
+	$(this).prop('disabled', true);
 });
 
+// Hide all results
 function hide() {
 	$("[id^=case__]").hide();
 }
 
 function compareDrugs() {
 	switch ( drugs[choice_1][choice_2] ) {
+		// Same input
 		case 0:
-			// Same input
 			hide();
 			$("#case__0").show();
 			break;
+
+		// Low risk & synergy
 		case 1:
-			// Low risk & synergy
 			hide();
 			$("#case__1").show();
 			break;
+
+		// Low risk & no synergy
 		case 2:
-			// Low risk & no synergy
 			hide();
 			$("#case__2").show();
 			break;
+
+		// Low risk & decrease
 		case 3:
-			// Low risk & decrease
 			hide();
 			$("#case__3").show();
 			break;
+
+		// Caution
 		case 4:
-			// Caution
 			hide();
 			$("#case__4").show();
 			break;
+
+		// Unsafe
 		case 5:
-			// Unsafe
 			hide();
 			$("#case__5").show();
 			break;
+
+		// Dangerous
 		case 6:
-			// Dangerous
 			hide();
 			$("#case__6").show();
 			break;
 	}
 }
 
-// Tabs
-$("#tabs_1 .tab").click(function() {
-  // Visual changes
-	$("#tabs_1 .tab").removeClass("tab__selected");
-	$(this).addClass("tab__selected");
-});
-
-$("#tabs_2 .tab").click(function() {
-	// Visual changes
-	$("#tabs_2 .tab").removeClass("tab__selected");
-	$(this).addClass("tab__selected");
-});
-
-$.fn.isOnScreen = function() {
-    var win = $(window);
-
-    var viewport = {
-        top : win.scrollTop(),
-        left : win.scrollLeft()
-    };
-    viewport.right = viewport.left + win.width();
-    viewport.bottom = viewport.top + win.height();
-
-    var bounds = this.offset();
-    bounds.right = bounds.left + this.outerWidth();
-    bounds.bottom = bounds.top + this.outerHeight();
-
-    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-};
-
-$("#drug_1").scroll(function() {
-	var number__popularOnScreen = 0;
-	var number__pharmaceuticalOnScreen = 0;
-	var number__researchChemicalOnScreen = 0;
-
-	$("#drug_1 .popular").each(function() {
-	  if ( $(this).isOnScreen() ) {
-	    number__popularOnScreen++;
-	  } else {
-			number__popularOnScreen--;
-		}
-	});
-
-	$("#drug_1 .pharmaceutical").each(function() {
-		if ( $(this).isOnScreen() ) {
-			number__pharmaceuticalOnScreen++;
-		} else {
-			number__pharmaceuticalOnScreen--;
-		}
-	});
-
-	$("#drug_1 .research-chemical").each(function() {
-	  if ( $(this).isOnScreen() ) {
-	    number__researchChemicalOnScreen++;
-	  } else {
-			number__researchChemicalOnScreen--;
-		}
-	});
-
-	if (number__pharmaceuticalOnScreen > -3) {
-		$("#tabs_1 .tab__pharmaceuticals").addClass("tab__selected");
-	} else {
-		$("#tabs_1 .tab__pharmaceuticals").removeClass("tab__selected");
-	}
-
-	if (number__researchChemicalOnScreen > -6) {
-		$("#tabs_1 .tab__research-chemical").addClass("tab__selected");
-	} else {
-		$("#tabs_1 .tab__research-chemical").removeClass("tab__selected");
-	}
-
-	if (number__popularOnScreen > -16) {
-		$("#tabs_1 .tab__popular-drug").addClass("tab__selected");
-	} else {
-		$("#tabs_1 .tab__popular-drug").removeClass("tab__selected");
-	}
-});
-
-$("#drug_2").scroll(function() {
-	var number__popularOnScreen = 0;
-	var number__pharmaceuticalOnScreen = 0;
-	var number__researchChemicalOnScreen = 0;
-
-	$("#drug_2 .popular").each(function() {
-	  if ( $(this).isOnScreen() ) {
-	    number__popularOnScreen++;
-	  } else {
-			number__popularOnScreen--;
-		}
-	});
-
-	$("#drug_2 .pharmaceutical").each(function() {
-		if ( $(this).isOnScreen() ) {
-			number__pharmaceuticalOnScreen++;
-		} else {
-			number__pharmaceuticalOnScreen--;
-		}
-	});
-
-	$("#drug_2 .research-chemical").each(function() {
-	  if ( $(this).isOnScreen() ) {
-	    number__researchChemicalOnScreen++;
-	  } else {
-			number__researchChemicalOnScreen--;
-		}
-	});
-
-	if (number__pharmaceuticalOnScreen > -3) {
-		$("#tabs_2 .tab__pharmaceuticals").addClass("tab__selected");
-	} else {
-		$("#tabs_2 .tab__pharmaceuticals").removeClass("tab__selected");
-	}
-
-	if (number__researchChemicalOnScreen > -6) {
-		$("#tabs_2 .tab__research-chemical").addClass("tab__selected");
-	} else {
-		$("#tabs_2 .tab__research-chemical").removeClass("tab__selected");
-	}
-
-	if (number__popularOnScreen > -16) {
-		$("#tabs_2 .tab__popular-drug").addClass("tab__selected");
-	} else {
-		$("#tabs_2 .tab__popular-drug").removeClass("tab__selected");
-	}
+// Uncheck all inputs on page load
+$( document ).ready(function() {
+	$("input").prop('checked', false);
 });

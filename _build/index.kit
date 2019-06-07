@@ -22,25 +22,205 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
-<body class="container">
-	<main role="main" id="result" class="row">
-		<!-- @include components/_results.kit -->
+<body>
+	<!-- Results (upper, white section) -->
+	<main role="main" id="result">
+		<!--Intro -->
+		<section id="case__x" class="result result__intro">
+		  <h1>What is this?</h1>
+		  <p>This site is meant as a quick reference guide for using two drugs at a time. Additional research must be done before using or combining any drugs. I'm not responsible if you use this and bad things happen.</p>
+		  <p>This site used data from and was influenced by a <a href="http://wiki.tripsit.me/wiki/Drug_combinations">difficult to read drug combination chart</a> from TripSit.com.</p>
+		</section>
+
+		<!-- Same input -->
+		<section id="case__0" class="result result__same">
+		  <h1 class="emoji">😸</h1>
+		  <h1>Have fun</h1>
+		  <p>Gooooood loooookin' son!</p>
+		</section>
+
+		<!-- Low risk & synergy -->
+		<section id="case__1" class="result result__low-and-synergy">
+		  <h1 class="emoji">😎</h1>
+		  <h1>Low Risk & Synergy</h1>
+		  <p>These drugs work together to cause an effect greater than the sum of its parts, and they aren't likely to cause an adverse or undesirable reaction when used carefully. Additional research should always be done before combining drugs.</p>
+		</section>
+
+		<!-- Low risk & no synergy -->
+		<section id="case__2" class="result result__low">
+		  <h1 class="emoji">😃</h1>
+		  <h1>Low Risk & No Synergy</h1>
+		  <p>Effects are just additive. The combination is unlikely to cause any adverse or undesirable reaction beyond those that might ordinarily be expected from these drugs.</p>
+		</section>
+
+		<!-- Low risk & decrease -->
+		<section id="case__3" class="result result__low-and-decrease">
+		  <h1 class="emoji">😐</h1>
+		  <h1>Low Risk & Decrease</h1>
+		</section>
+
+		<!-- Caution -->
+		<section id="case__4" class="result result__caution">
+		  <h1 class="emoji">😥</h1>
+		  <h1>Caution</h1>
+		  <p>These combinations are not usually physically harmful, but may produce undesirable effects, such as physical discomfort or overstimulation. Extreme use may cause physical health issues. Synergistic effects may be unpredictable. Care should be taken when choosing to use this combination.</p>
+		</section>
+
+		<!-- Unsafe -->
+		<section id="case__5" class="result result__unsafe">
+		  <h1 class="emoji">😨</h1>
+		  <h1>Unsafe</h1>
+		  <p>There is considerable risk of physical harm when taking these combinations, they should be avoided where possible.</p>
+		</section>
+
+		<!-- Dangerous -->
+		<section id="case__6" class="result result__dangerous">
+		  <h1 class="emoji">💀</h1>
+		  <h1>Dangerous</h1>
+		  <p>These combinations are considered extremely harmful and should always be avoided. Reactions to these drugs taken in combination are highly unpredictable and have a potential to cause death.</p>
+		</section>
 	</main>
 
-	<footer class="row">
-		<div id="drug_1" class="drug-selector">
-			<!-- @include components/_drugs.kit -->
+	<!-- List of drugs (lower, black section) -->
+	<footer>
+		<!-- Popular -->
+		<div class="group">
+			<aside>Popular Drugs</aside>
+			<div class="drug__container" data-value="18">
+				<span class="drug__name">Alcohol</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="14">
+				<span class="drug__name">Amphetamines</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="22">
+				<span class="drug__name">Benzodiazepines</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="17">
+				<span class="drug__name">Caffeine</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="9">
+				<span class="drug__name">Cannabis</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="16">
+				<span class="drug__name">Cocaine</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="2">
+				<span class="drug__name">DMT</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="12">
+				<span class="drug__name">DXM</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="19">
+				<span class="drug__name">GHB/GBL</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="10">
+				<span class="drug__name">Ketamine</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="0">
+				<span class="drug__name">LSD</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="15">
+				<span class="drug__name">MDMA</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="3">
+				<span class="drug__name">Mescaline</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="1">
+				<span class="drug__name">Mushrooms</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="13">
+				<span class="drug__name">Nitrous</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="20">
+				<span class="drug__name">Opioids</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
 		</div>
 
-		<!-- <svg class="plus" width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-		    <title>+</title>
-		    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-		        <polygon id="+" fill="#ffffff" points="0.214 9.84087657 0.214 6.96934005 6.16877387 6.96934005 6.16877387 0.924 9.25922613 0.924 9.25922613 6.96934005 15.214 6.96934005 15.214 9.84087657 9.25922613 9.84087657 9.25922613 15.924 6.16877387 15.924 6.16877387 9.84087657"></polygon>
-		    </g>
-		</svg> -->
+		<!-- Research Chemicals -->
+		<div class="group">
+			<aside>Research Chemicals</aside>
+			<div class="drug__container" data-value="6">
+				<span class="drug__name">2C-x</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="7">
+				<span class="drug__name">2C-T-x</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="8">
+				<span class="drug__name">5-MeO-xxT</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="4">
+				<span class="drug__name">DOx</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="1">
+				<span class="drug__name">MXE</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="5">
+				<span class="drug__name">NBOMes</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+		</div>
 
-		<div id="drug_2" class="drug-selector">
-			<!-- @include components/_drugs.kit -->
+		<!-- Pharmaceuticals -->
+		<div class="group">
+			<aside>Pharmaceuticals</aside>
+			<div class="drug__container" data-value="23">
+				<span class="drug__name">MAOIs</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="24">
+				<span class="drug__name">SSRIs</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
+			<div class="drug__container" data-value="21">
+				<span class="drug__name">Tramadol</span>
+				<input type="checkbox" />
+				<input type="checkbox" />
+			</div>
 		</div>
 	</footer>
 

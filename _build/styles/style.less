@@ -3,155 +3,102 @@
 
 body {
 	font-family: system, -apple-system, "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+	background: black;
+	display: flex;
 }
-a {
-	color: inherit;
-}
-::selection {
-	background: OrangeRed;
-	color: white;
-}
-
-
-h1 {
+html,
+body {
 	margin: 0;
+	padding: 0;
+	height: 100%;
 }
 
-/* little + between drug-selectors */
-.plus {
-	position: absolute;
-	top: 43px;
-	left: calc(50% - 17px);
-	z-index: 3;
-	background: OrangeRed;
-	border-radius: 50%;
-	padding: 7px;
-	border: 4px solid white;
-}
-
-/* individual drugs */
-.drug {
-	cursor: pointer;
-	user-select: none;
-	z-index: 1;
-	margin: 0;
-	padding: 5px 10px;
-	animation-duration: 1s;
-	animation-fill-mode: both;
-	display: block;
-}
-
-/* selected drug */
-.drug__selected {
-	z-index: 2;
-	color: OrangeRed;
-    animation-duration: 1s;
-}
-
+//
+// TOP HALF
+//
 main {
-	background: transparent;
+	background: white;
 	color: black;
-	padding: 10px;
-	min-height: 300px;
+	padding: 16px;
+	min-height: 382px;
 	transition: all 2s ease;
-}
-.emoji {
-	font-size: 3rem;
-}
-.sticky {
-	position: sticky;
-	top: 0;
-	background-color: white;
-	font-size: small;
-	padding: 10px 10px 5px 10px;
-    color: OrangeRed;
-    border-bottom: 2px solid OrangeRed;
-	z-index: 3;
-	font-weight: bold;
+	width: 100%;
 }
 .result {
 	display: none;
-
-	p {
-		line-height: 1.5;
-	}
 	&__intro {
 		display: block;
 	}
-	&__same {
-
-	}
-	&__low-and-synergy {
-
-	}
-	&__low {
-
-	}
-	&__low-and-decrease {
-
-	}
-	&__caution {
-
-	}
-	&__unsafe {
-
-	}
-	&__dangerous {
-
-	}
+}
+.emoji {
+	font-size: 5rem;
 }
 
-
-
-
-
-/*
-	footer stuff
-*/
-
-html,
-body {
-   margin: 0;
-   padding: 0;
-   height: 100%;
-}
-body {
-   min-height: 100%;
-   position: relative;
-}
+//
+// BOTTOM HALF
+//
 footer {
-   position: absolute;
-   bottom: 0;
-   width: 100%;
-   height: 38%;   /* Height of the footer */
-   border-top: 5px solid red;
-   display: flex;
-}
-
-
-/* containers for drugs */
-.drug-selector {
-    overflow-x: scroll;
+	position: absolute;
+	bottom: 0;
+	height: 38%;
+	background: black;
+	color: white;
+	width: 100%;
+	overflow-x: scroll;
 	-webkit-overflow-scrolling: touch;
-    height: 100%;
-    width: 50%;
-    display: inline-block;
+}
+.drug__container {
+	margin: 0 16px;
+	border-bottom: 1px solid hsla( 0, 0, 100, 0.2);
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+	&:last-of-type {
+		border-bottom: none;
+	}
+}
+.drug__name {
+	flex-grow: 2;
+	font-weight: 600;
+}
+aside {
+	position: sticky;
+	top: 0;
 	background-color: white;
+	font-size: 13px;
+	padding: 5px 16px;
+	color: black;
+	text-transform: uppercase;
+	z-index: 3;
+	font-weight: bold;
+	display: initial;
 }
 
-/*
-	Desktop style
-*/
+// Circle checkboxes
+input[type='checkbox'] {
+	appearance: none;
+	height: 40px;
+	width: 40px;
+	margin-bottom: none;
+	border-radius: 20px;
+	background: white;
+	transition: all 0.5s ease-in-out;
+	border: 8px solid white;
+	cursor: pointer;
+	&:first-of-type {
+		margin-right: 16px;
+	}
+	&:checked {
+		background: black;
+		cursor: default;
+	}
+}
+
+//
+// DESKTOP STYLES
+//
 @media only screen and (min-width: 768px) {
-	.drug {
-		margin: 10px 0;
-	}
-	.plus {
-		top: calc(50% - 17px);
-		left: 310px;
-	}
-	section {
-		padding: 40px;
-		max-width: 700px;
-	}
+
 }

@@ -24,16 +24,23 @@ main {
 	transition: all 2s ease;
 	width: 100%;
 }
-.result {
+.formula {
 	display: none;
-	&__intro {
-		display: block;
+}
+.formula {
+	span {
+		background: black;
+		color: white;
+		padding: 2px 5px;
+		font-weight: bold;
+		vertical-align: middle;
 	}
 }
 .emoji {
-	font-size: 5rem;
+	color: inherit !important;
+	background: white !important;
+	font-size: 4rem;
 }
-
 //
 // BOTTOM HALF
 //
@@ -108,7 +115,7 @@ input[type='checkbox'] {
 		position: inherit;
 	}
 	.group,
-	.result {
+	section {
 		max-width: 550px;
 		margin: 0 auto;
 	}

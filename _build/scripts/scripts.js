@@ -34,6 +34,10 @@ var drugs = [
 var choice_1;
 var	choice_2;
 
+// Drug names
+var textDrug1;
+var textDrug2;
+
 // Column 1
 // left column checkboxes (column 1)
 $("input:first-of-type").click(function() {
@@ -51,6 +55,12 @@ $("input:first-of-type").click(function() {
 
 	// Disable this checkbox so it can't be deselected
 	$(this).prop('disabled', true);
+
+	// Get drug name
+	textDrug1 = $(this).siblings(".drug__name").text();
+
+	// Show drug names
+	displayDrugNames();
 });
 
 // Column 2
@@ -70,55 +80,75 @@ $("input:last-of-type").click(function() {
 
 	// Disable this checkbox so it can't be deselected
 	$(this).prop('disabled', true);
+
+	// Get drug name
+	textDrug2 = $(this).siblings(".drug__name").text();
+
+	// Show drug names
+	displayDrugNames();
+
+	$("#formula").show();
 });
 
-// Hide all results
-function hide() {
-	$("[id^=case__]").hide();
+function displayDrugNames() {
+	if (textDrug1 == textDrug2) {
+		$("#displayDrug1").text(textDrug1);
+		$("#displayDrug2").text("MORE " + textDrug2);
+	} else {
+		$("#displayDrug1").text(textDrug1);
+		$("#displayDrug2").text(textDrug2);
+	}
 }
 
 function compareDrugs() {
 	switch ( drugs[choice_1][choice_2] ) {
 		// Same input
 		case 0:
-			hide();
-			$("#case__0").show();
+			$("#emoji").text("😸");
+			$("#resultTitle").text("Have fun");
+			$("#resultParagraph").text("Gooooood loooookin' son!");
 			break;
 
 		// Low risk & synergy
 		case 1:
-			hide();
-			$("#case__1").show();
+			$("#emoji").text("😎");
+			$("#resultTitle").text("Low Risk & Synergy");
+			$("#resultParagraph").text("These drugs work together to cause an effect greater than the sum of its parts, and they aren't likely to cause an adverse or undesirable reaction when used carefully. Additional research should always be done before combining drugs.");
 			break;
 
 		// Low risk & no synergy
 		case 2:
-			hide();
-			$("#case__2").show();
+			$("#emoji").text("😃");
+			$("#resultTitle").text("Low Risk & No Synergy");
+			$("#resultParagraph").text("Effects are just additive. The combination is unlikely to cause any adverse or undesirable reaction beyond those that might ordinarily be expected from these drugs.");
 			break;
 
 		// Low risk & decrease
 		case 3:
-			hide();
-			$("#case__3").show();
+			$("#emoji").text("😐");
+			$("#resultTitle").text("Low Risk & Decrease");
+			$("#resultParagraph").text(" ");
 			break;
 
 		// Caution
 		case 4:
-			hide();
-			$("#case__4").show();
+			$("#emoji").text("😥");
+			$("#resultTitle").text("Caution");
+			$("#resultParagraph").text("These combinations are not usually physically harmful, but may produce undesirable effects, such as physical discomfort or overstimulation. Extreme use may cause physical health issues. Synergistic effects may be unpredictable. Care should be taken when choosing to use this combination.");
 			break;
 
 		// Unsafe
 		case 5:
-			hide();
-			$("#case__5").show();
+			$("#emoji").text("😨");
+			$("#resultTitle").text("Unsafe");
+			$("#resultParagraph").text("There is considerable risk of physical harm when taking these combinations, they should be avoided where possible.");
 			break;
 
 		// Dangerous
 		case 6:
-			hide();
-			$("#case__6").show();
+			$("#emoji").text("💀");
+			$("#resultTitle").text("Dangerous");
+			$("#resultParagraph").text("These combinations are considered extremely harmful and should always be avoided. Reactions to these drugs taken in combination are highly unpredictable and have a potential to cause death.");
 			break;
 	}
 }

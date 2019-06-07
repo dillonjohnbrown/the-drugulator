@@ -38,56 +38,43 @@ var	choice_2;
 var textDrug1;
 var textDrug2;
 
-// Column 1
-// left column checkboxes (column 1)
-$("input:first-of-type").click(function() {
-	// Enable all column 1 checkboxes
-	// Uncheck other checkboxes in first column
-	$("input:first-of-type")
-		.prop('disabled', false)
-		.not(this).prop('checked', false);
+$("input").click(function() {
+	if ( $(this).is(':first-of-type') ) {
+		// Enable all column 1 checkboxes
+		// Uncheck other checkboxes in first column
+		$("input:first-of-type")
+			.prop('disabled', false)
+			.not(this).prop('checked', false);
 
-	// Get the number of the drug
-	choice_1 = $(this).parent().attr('data-value');
+		// Get the number of the drug
+		choice_1 = $(this).parent().attr('data-value');
 
-	// Compare
-	compareDrugs();
+		// Get drug name
+		textDrug1 = $(this).siblings(".drug__name").text();
+	} else {
+		// Enable all column 2 checkboxes
+		// Uncheck other checkboxes in first column
+		$("input:last-of-type")
+			.prop('disabled', false)
+			.not(this).prop('checked', false);
 
-	// Disable this checkbox so it can't be deselected
-	$(this).prop('disabled', true);
+		// Get the number of the drug
+		choice_2 = $(this).parent().attr('data-value');
 
-	// Get drug name
-	textDrug1 = $(this).siblings(".drug__name").text();
+		// Get drug name
+		textDrug2 = $(this).siblings(".drug__name").text();
 
-	// Show drug names
-	displayDrugNames();
-});
-
-// Column 2
-// right column checkboxes (column 2)
-$("input:last-of-type").click(function() {
-	// Enable all column 2 checkboxes
-	// Uncheck other checkboxes in second column
-	$("input:last-of-type")
-		.prop('disabled', false)
-		.not(this).prop('checked', false);
-
-	// Get the number of the drug
-	choice_2 = $(this).parent().attr('data-value');
+		$("#formula").show();
+	}
 
 	// Compare
 	compareDrugs();
 
-	// Disable this checkbox so it can't be deselected
-	$(this).prop('disabled', true);
-
-	// Get drug name
-	textDrug2 = $(this).siblings(".drug__name").text();
-
 	// Show drug names
 	displayDrugNames();
 
-	$("#formula").show();
+	// Disable this checkbox so it can't be deselected
+	$(this).prop('disabled', true);
 });
 
 function displayDrugNames() {

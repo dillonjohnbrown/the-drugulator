@@ -51,6 +51,10 @@ $("input").click(function() {
 
 		// Get drug name
 		textDrug1 = $(this).siblings(".drug__name").text();
+		
+		// Show and hide second input until first is selected
+		$("input:last-of-type").show();
+		$("input").addClass("slideInRight");
 	} else {
 		// Enable all column 2 checkboxes
 		// Uncheck other checkboxes in first column

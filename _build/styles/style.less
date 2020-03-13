@@ -120,3 +120,32 @@ input[type='checkbox'] {
 		margin: 0 auto;
 	}
 }
+
+//
+// ANIMATIONS
+//
+@keyframes slideInRight {
+	from {
+		transform: translate3d(100%, 0, 0);
+		visibility: visible;
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.slideInRight {
+	display: block;
+	animation-name: slideInRight;
+}
+.hide {
+	display: none;
+}
+input {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	&:last-of-type {
+		display: none;
+		animation-delay: 0.0001s;
+	}
+}

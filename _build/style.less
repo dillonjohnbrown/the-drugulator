@@ -1,9 +1,18 @@
 @import "_skeleton.less";
 
+:root {
+	--color-1:          #001e1d;
+	--color-2:          #abd1c6;
+	--color-3:          #004643;
+	--color-4:          #568C85;
+	--color-5:          #fffffe;
+	--color-link:       #f9bc60;
+	--color-link-hover: #eeca94;
+}
 body {
 	margin: 0;
-	color: #001e1d;
-	background: #abd1c6;
+	color: var(--color-1);
+	background: var(--color-2);
 }
 @media (min-width: 550px) {
 	body {
@@ -21,24 +30,25 @@ select {
 	font-size: 1rem;
 	text-transform: uppercase;
 	margin: 2rem 0 1rem 0;
-	color: #004643;
+	color: var(--color-3);
 }
-
-header {
-	
+a {
+	color: var(--color-link);
+	&:hover {
+	  color: var(--color-link-hover);
+	}
 }
 .result,
 .about {
 	padding: 3rem 3rem 8rem 3rem;
 }
 .result {
-	background: #568C85;
+	background: var(--color-4);
 	border-radius: 30px 30px 0 0;
-	color: #fffffe;
+	color: var(--color-5);
 	position: relative;
 	top: 30px;
 	overflow: hidden;
-	
 	transition-property: max-height, padding-top, padding-bottom;
 	transition-duration: 1.5s;
 	transition-timing-function: ease-in-out;
@@ -50,20 +60,22 @@ header {
 	}
 }
 .about {
-	background: #004643;
-	color: #fff;
+	background: var(--color-3);
+	color: var(--color-5);
 	border-radius: 30px 30px 0 0;
 	p {
-		color: #abd1c6;
+		color: var(--color-2);
 	}
 }
 h1 {
-	color: #fffffe;
 	font-weight: 900;
 }
 h4 {
 	font-weight: 800;
-	color: #fffffe;
+}
+h1,
+h4 {
+	color: var(--color-5);
 }
 @media (min-width: 550px) {
 	.about {

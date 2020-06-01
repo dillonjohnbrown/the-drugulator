@@ -1,0 +1,76 @@
+@import "_skeleton.less";
+
+body {
+	margin: 0;
+	color: #001e1d;
+	background: #abd1c6;
+}
+@media (min-width: 550px) {
+	body {
+		margin: 3rem;
+	}
+}
+select {
+	font-size: 2rem;
+	width: 100%;
+	max-width: 100%;
+	margin: 0 0 2rem 0;
+}
+.step-label {
+	font-weight: 900;
+	font-size: 1rem;
+	text-transform: uppercase;
+	margin: 2rem 0 1rem 0;
+	color: #004643;
+}
+
+header {
+	
+}
+.result,
+.about {
+	padding: 3rem 3rem 8rem 3rem;
+}
+.result {
+	background: #568C85;
+	border-radius: 30px 30px 0 0;
+	color: #fffffe;
+	position: relative;
+	top: 30px;
+	overflow: hidden;
+	
+	transition-property: max-height, padding-top, padding-bottom;
+	transition-duration: 1.5s;
+	transition-timing-function: ease-in-out;
+	height: auto;
+	max-height: 600px;
+	&.collapsed {
+	  	max-height: 0;
+		padding: 0 3rem 0 3rem;
+	}
+}
+.about {
+	background: #004643;
+	color: #fff;
+	border-radius: 30px 30px 0 0;
+	p {
+		color: #abd1c6;
+	}
+}
+h1 {
+	color: #fffffe;
+	font-weight: 900;
+}
+h4 {
+	font-weight: 800;
+	color: #fffffe;
+}
+@media (min-width: 550px) {
+	.about {
+		border-radius: 30px;
+	}
+	.result,
+	.about {
+		padding: 3rem 5rem 8rem 5rem;
+	}
+}

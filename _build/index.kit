@@ -16,59 +16,48 @@
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="stylesheet" type="text/css" href="css/style-min.css"/>
 
-
 	<!-- Favicon
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
-	<!--
-		Pick your drugs
-	-->
-	<header class="container">
+	<div class="container">
 		<div class="row">
-			<div class="six columns" id="grid-item-1">
-				<p class="step-label">What happens if I take this drug...</p>
-			</div>
-			
-			<div class="six columns" id="grid-item-2">
-				<p class="step-label">with this other drug?</p>
+			<div class="twelve columns no-padding flex">
+				<!-- @include _icon.svg -->
+				<h4>The Drugulator</h4>
 			</div>
 		</div>
-	</header>
-	
-	<!--
-		Result
-	-->
-	<div class="container result collapsed" id="result">
 		<div class="row">
-			<div class="one column">
-				<p class="step-label">Result</p>
+			<!--
+				Picker
+			-->
+			<div class="four columns border">
+				<label for="drugSelect1" id="drugLabel1">What if I take this drug...</label>
+				<label for="drugSelect2" id="drugLabel2">...with this drug?</label>
 			</div>
-			<div class="eight offset-by-two columns">
+			<!--
+				Result
+			-->
+			<div class="eight columns border result">
+				<p class="result-accessory">Result</p>
 				<!-- <p class="emoji">😍</p> -->
-				<h4 id="displayResult"></h4>
+				<h2 id="displayResult"></h2>
 				<span id="displayNote" class="displayNote"></span>
 			</div>
 		</div>
-	</div>
-	
-	<!--
-		About
-	-->
-	<div class="container about">
 		<div class="row">
-			<div class="one column">
-				<p class="step-label">About</p>
-			</div>
-			<div class="eight offset-by-two columns">
-				<h1>The Drugulator</h1>
+			<!--
+				About
+			-->
+			<div class="eight offset-by-four columns">
+				<p class="about-accessory">About</p>
 				<p>The Drugulator is a quick reference guide for using two drugs at once. You are responsible for your own safety and owe it to yourself to do addition research before using or combining drugs. <i>Stay safe and have fun!</i></p>
 				<p>This site uses <a href="https://tripsit.me/combo_beta.json">data from TripSit</a>. It was inspired by their <a href="http://wiki.tripsit.me/wiki/Drug_combinations">drug combination chart</a>.</p>
-		  	</div>
+			</div>
 		</div>
 	</div>
-	
+
 	 <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>

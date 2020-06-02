@@ -13,13 +13,13 @@ $.getJSON( "js/combo_beta.json", function( data ) {
 		"id": "drugSelect2",
 		"onchange": "getDrugValue2()",
 		html: items.join( "" )
-	}).appendTo( "#grid-item-2" );
+	}).insertAfter( "#drugLabel2" );
 	
 	$( "<select/>", {
 		"id": "drugSelect1",
 		"onchange": "getDrugValue1()",
 		html: items.join( "" )
-	}).appendTo( "#grid-item-1" );
+	}).insertAfter( "#drugLabel1" );
 	
 	// Add placeholders to select elements
 	$('#drugSelect1').prepend(`<option value="" selected disabled hidden">first, select a drug</option>`);
@@ -74,7 +74,4 @@ function compareDrugs() {
 			$("#displayNote").text("");
 		}
 	}
-	
-	// Remove class responsible for hiding result
-	$("#result").removeClass("collapsed");
 }

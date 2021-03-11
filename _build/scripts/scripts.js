@@ -8,13 +8,14 @@ $.getJSON( "js/combo_beta.json", function( data ) {
 		items.push( "<option value='" + key + "'>"  + key + "</option>" );
 	});
 	
-	// Create select elements
+	// Create select (dropdown #2) element
 	$( "<select/>", {
 		"id": "drugSelect2",
 		"onchange": "getDrugValue2()",
 		html: items.join( "" )
 	}).insertAfter( "#drugLabel2" );
 	
+	// Create select (dropdown #1) element
 	$( "<select/>", {
 		"id": "drugSelect1",
 		"onchange": "getDrugValue1()",
@@ -26,8 +27,8 @@ $.getJSON( "js/combo_beta.json", function( data ) {
 	$('#drugSelect2').prepend(`<option value="" selected disabled hidden">then select another drug</option>`); 
 });
 
-// Make sense of big JSON file
-// No clue how this works
+// Make sense of TripSit's big JSON file
+// I have no clue how this works
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
@@ -43,16 +44,21 @@ readTextFile("js/combo_beta.json", function(text) {
     data = JSON.parse(text);
 });
 
-
+// Get the selected drug from dropdown #1
 function getDrugValue1() {
 	var x = document.getElementById("drugSelect1");
 	drugValue1 = x.options[x.selectedIndex].value;
+	
+	// Show result
 	compareDrugs();
 }
 
+// Get the selected drug from dropdown #2
 function getDrugValue2() {
 	var x = document.getElementById("drugSelect2");
 	drugValue2 = x.options[x.selectedIndex].value;
+	
+	// Show result
 	compareDrugs();
 }
 

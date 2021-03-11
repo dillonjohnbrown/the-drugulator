@@ -63,6 +63,9 @@ function getDrugValue2() {
 }
 
 function compareDrugs() {
+	// console.log({drugValue1});
+	// console.log({drugValue2});
+	
 	if (drugValue1 == drugValue2) {
 		// Drugs are the same and not in JSON file
 		$("#displayResult").text("Good lookin' son!");

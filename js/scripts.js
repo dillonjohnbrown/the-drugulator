@@ -66,19 +66,19 @@ function compareDrugs() {
 	
 	if (drugValue1 == drugValue2) {
 		// Drugs are the same and not in JSON file
-		$("#displayResult").text("Good lookin' son!");
-		$("#displayNote").text("If you take " + drugValue1 + " and more " + drugValue2 + ", well you're just taking one drug now aren't you?");
+		document.querySelector("#displayResult").text("Good lookin' son!");
+		document.querySelector("#displayNote").text("If you take " + drugValue1 + " and more " + drugValue2 + ", well you're just taking one drug now aren't you?");
 	} else {
 		// Drugs are different
 		var drugCombinationResult = data[drugValue1][drugValue2];
 	
-		$("#displayResult").text( drugCombinationResult.status );
+		document.querySelector("#displayResult").text( drugCombinationResult.status );
 		
 		// If specific combination has a note, print it, otherwise clear it
 		if ( typeof drugCombinationResult.note != "undefined" ) {
-			$("#displayNote").text( drugCombinationResult.note );
+			document.querySelector("#displayNote").text( drugCombinationResult.note );
 		} else {
-			$("#displayNote").text("");
+			document.querySelector("#displayNote").text("");
 		}
 	}
 }

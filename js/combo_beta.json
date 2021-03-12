@@ -1651,7 +1651,8 @@
             "note": "MAO-B inhibitors can increase the potency and duration of  phenethylamines unpredictably. MAO-A inhibitors with MDMA will lead to hypertensive crises."
         },
         "ssris": {
-            "status": "Low Risk & Decrease"
+            "status": "Dangerous",
+			"note": "MDMA, in combination with the widely-prescribed SSRI antidepressant class, can lead to rapid, synergistic rise of serotonin (5-HT) concentration in the central nervous system, leading to the acute medical emergency known as serotonin syndrome."
         }
     },
 	"mescaline": {
@@ -2334,7 +2335,8 @@
             "status": "Low Risk & No Synergy"
         },
         "mdma": {
-            "status": "Low Risk & Decrease"
+            "status": "Dangerous",
+			"note": "MDMA, in combination with the widely-prescribed SSRI antidepressant class, can lead to rapid, synergistic rise of serotonin (5-HT) concentration in the central nervous system, leading to the acute medical emergency known as serotonin syndrome."
         },
         "cocaine": {
             "status": "Low Risk & No Synergy",

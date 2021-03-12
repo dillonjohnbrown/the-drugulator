@@ -1,1 +1,68 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <title>The Drugulator</title> <meta name="description" content=""> <meta name="author" content=""> <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> <link rel="stylesheet" href="css/style-min.css"> <link rel="icon" type="image/png" href="images/favicon.png"> </head> <body> <div class="container"> <div class="row"> <div class="twelve columns no-padding flex"> <svg viewBox="0 0 1495 1495" xmlns="http://www.w3.org/2000/svg"> <defs> <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="a"> <stop stop-color="#0F27F3" offset="0%"/> <stop stop-color="#0719B6" offset="100%"/> </linearGradient> <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="b"> <stop stop-color="#0096FF" offset="0%"/> <stop stop-color="#0252FF" offset="100%"/> </linearGradient> </defs> <g fill="none" fill-rule="evenodd"> <circle stroke="#FFF" stroke-width="80" fill="#000B76" cx="747" cy="748" r="673"/> <path d="M223.622 849.348c20.8 108.056 74.235 204.496 149.64 278.665C469.458 1222.629 601.413 1281 747 1281c147.184 0 280.434-59.658 376.888-156.112 94.642-94.642 153.858-224.711 156.049-368.609l-4.033-6.653c-52.37-82.83-114.534-113.787-183.65-111.974-103.042 2.705-217.672 70.668-332.406 136.784-127.007 73.188-254.091 144.276-366.282 144.188-47.164-.037-91.983-11.922-133.666-39.889-12.36-8.293-24.469-18.038-36.278-29.387z" stroke="#000B76" stroke-width="60" fill="url(#a)" transform="matrix(-1 0 0 1 1494 0)"/> <path d="M223.622 849.348c20.8 108.056 74.235 204.496 149.64 278.665C469.458 1222.629 601.413 1281 747 1281c147.184 0 280.434-59.658 376.888-156.112 94.642-94.642 153.858-224.711 156.049-368.609l-4.033-6.653c-52.37-82.83-114.534-113.787-183.65-111.974-103.042 2.705-217.672 70.668-332.406 136.784-127.007 73.188-254.091 144.276-366.282 144.188-47.164-.037-91.983-11.922-133.666-39.889-12.36-8.293-24.469-18.038-36.278-29.387z" stroke="#000B76" stroke-width="60" fill="url(#b)"/> <circle fill="#FFF" cx="747" cy="450" r="138"/> </g> </svg> <h4>The Drugulator</h4> </div> </div> <div class="row"> <div class="four columns border"> <label for="drugSelect1" id="drugLabel1">What if I take this drug...</label> <label for="drugSelect2" id="drugLabel2">...with this drug?</label> </div> <div class="eight columns border result"> <p class="result-accessory">Result</p> <h2 id="displayResult"></h2> <span id="displayNote" class="displayNote"></span> </div> </div> <div class="row"> <div class="eight offset-by-four columns"> <p class="about-accessory">About</p> <p>The Drugulator is a quick reference guide for using two drugs at once. You are responsible for your own safety and owe it to yourself to do addition research before using or combining drugs. <i>Stay safe and have fun!</i></p> <p>This site uses <a href="https://tripsit.me/combo_beta.json">data from TripSit</a>. It was inspired by their <a href="http://wiki.tripsit.me/wiki/Drug_combinations">drug combination chart</a>.</p> </div> </div> </div> <script src="js/scripts.js"></script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>The Drugulator</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+		<link rel="stylesheet" href="css/style-min.css">
+		<link rel="icon" type="image/png" href="images/favicon.png">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<!--
+					Logo and title
+				-->
+				<div class="twelve columns no-padding flex">
+					<svg viewbox="0 0 1495 1495" xmlns="http://www.w3.org/2000/svg">
+					<defs>
+						<lineargradient x1="50%" y1="0%" x2="50%" y2="100%" id="a">
+							<stop stop-color="#0F27F3" offset="0%"></stop>
+							<stop stop-color="#0719B6" offset="100%"></stop>
+						</lineargradient>
+						<lineargradient x1="50%" y1="0%" x2="50%" y2="100%" id="b">
+							<stop stop-color="#0096FF" offset="0%"></stop>
+							<stop stop-color="#0252FF" offset="100%"></stop>
+						</lineargradient>
+					</defs>
+					<g fill="none" fill-rule="evenodd">
+						<circle stroke="#FFF" stroke-width="80" fill="#000B76" cx="747" cy="748" r="673"></circle>
+						<path d="M223.622 849.348c20.8 108.056 74.235 204.496 149.64 278.665C469.458 1222.629 601.413 1281 747 1281c147.184 0 280.434-59.658 376.888-156.112 94.642-94.642 153.858-224.711 156.049-368.609l-4.033-6.653c-52.37-82.83-114.534-113.787-183.65-111.974-103.042 2.705-217.672 70.668-332.406 136.784-127.007 73.188-254.091 144.276-366.282 144.188-47.164-.037-91.983-11.922-133.666-39.889-12.36-8.293-24.469-18.038-36.278-29.387z" stroke="#000B76" stroke-width="60" fill="url(#a)" transform="matrix(-1 0 0 1 1494 0)"></path>
+						<path d="M223.622 849.348c20.8 108.056 74.235 204.496 149.64 278.665C469.458 1222.629 601.413 1281 747 1281c147.184 0 280.434-59.658 376.888-156.112 94.642-94.642 153.858-224.711 156.049-368.609l-4.033-6.653c-52.37-82.83-114.534-113.787-183.65-111.974-103.042 2.705-217.672 70.668-332.406 136.784-127.007 73.188-254.091 144.276-366.282 144.188-47.164-.037-91.983-11.922-133.666-39.889-12.36-8.293-24.469-18.038-36.278-29.387z" stroke="#000B76" stroke-width="60" fill="url(#b)"></path>
+						<circle fill="#FFF" cx="747" cy="450" r="138"></circle>
+					</g></svg>
+					<h4>The Drugulator</h4>
+				</div>
+			</div>
+			
+			<!--
+				Left column
+			-->
+			<div class="row">
+				<div class="four columns border">
+					<label for="drugSelect1" id="drugLabel1">What if I take this drug...</label>
+					<label for="drugSelect2" id="drugLabel2">...with this drug?</label>
+				</div>
+				<div class="eight columns border result">
+					<p class="result-accessory">Result</p>
+					<h2 id="displayResult"></h2><span id="displayNote" class="displayNote"></span>
+				</div>
+			</div>
+			
+			<!--
+				Right column
+			-->
+			<div class="row">
+				<div class="eight offset-by-four columns">
+					<p class="about-accessory">About</p>
+					<p>The Drugulator is a quick reference guide for using two drugs at once. You are responsible for your own safety and owe it to yourself to do addition research before using or combining drugs. <i>Stay safe and have fun!</i></p>
+					<p>This site uses <a href="https://tripsit.me/combo_beta.json">data from TripSit</a>. It was inspired by their <a href="http://wiki.tripsit.me/wiki/Drug_combinations">drug combination chart</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>

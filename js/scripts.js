@@ -33,9 +33,6 @@ getJSON('js/combo_beta.json', function(err, data) {
 			"onchange": "getDrugValue2()",
 			html: items.join( "" )
 		}).insertAfter( "#drugLabel2" );
-		
-		// Update variable
-		drugSelect2 = document.getElementById("drugSelect2");
 	
 		// Create select (dropdown #1) element
 		// TODO replace jQuery with JavaScript
@@ -45,7 +42,8 @@ getJSON('js/combo_beta.json', function(err, data) {
 			html: items.join( "" )
 		}).insertAfter( "#drugLabel1" );
 		
-		// Update variable
+		// Update variables
+		drugSelect2 = document.getElementById("drugSelect2");
 		drugSelect1 = document.getElementById("drugSelect1");
 	
 		// Add placeholders to select elements

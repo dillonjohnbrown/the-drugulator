@@ -101,7 +101,7 @@ function compareDrugs() {
 		
 		// If specific combination has a note, print it, otherwise clear it
 		if ( typeof drugCombinationResult.note != "undefined" ) {
-			$("#displayNote").text( drugCombinationResult.note );
+			$("#displayNote").html( drugCombinationResult.note );
 		} else {
 			$("#displayNote").text("");
 		}

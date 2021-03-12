@@ -1652,7 +1652,7 @@
         },
         "ssris": {
             "status": "Dangerous",
-			"note": "MDMA, in combination with the widely-prescribed SSRI antidepressant class, can lead to rapid, synergistic rise of serotonin (5-HT) concentration in the central nervous system, leading to the acute medical emergency known as serotonin syndrome. Source: https://pubmed.ncbi.nlm.nih.gov/24006318/"
+			"note": "MDMA, in combination with the widely-prescribed SSRI antidepressant class, can lead to rapid, synergistic rise of serotonin (5-HT) concentration in the central nervous system, leading to the acute medical emergency known as serotonin syndrome.<br><br>Source: <a href='https://pubmed.ncbi.nlm.nih.gov/24006318/'>https://pubmed.ncbi.nlm.nih.gov/24006318/</a>"
         }
     },
 	"mescaline": {
@@ -2336,7 +2336,7 @@
         },
         "mdma": {
             "status": "Dangerous",
-			"note": "MDMA, in combination with the widely-prescribed SSRI antidepressant class, can lead to rapid, synergistic rise of serotonin (5-HT) concentration in the central nervous system, leading to the acute medical emergency known as serotonin syndrome. Source: https://pubmed.ncbi.nlm.nih.gov/24006318/"
+			"note": "MDMA, in combination with the widely-prescribed SSRI antidepressant class, can lead to rapid, synergistic rise of serotonin (5-HT) concentration in the central nervous system, leading to the acute medical emergency known as serotonin syndrome.<br><br>Source: <a href='https://pubmed.ncbi.nlm.nih.gov/24006318/'>https://pubmed.ncbi.nlm.nih.gov/24006318/</a>"
         },
         "cocaine": {
             "status": "Low Risk & No Synergy",

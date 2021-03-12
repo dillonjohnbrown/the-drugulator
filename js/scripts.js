@@ -21,6 +21,7 @@ $.getJSON( "js/combo_beta.json", function( data ) {
 	}).insertAfter( "#drugLabel1" );
 	
 	// Add placeholders to select elements
+	// this causes issues with firefox
 	$('#drugSelect1').prepend(`<option value="" selected disabled hidden">first, select a drug</option>`);
 	$('#drugSelect2').prepend(`<option value="" selected disabled hidden">then select another drug</option>`); 
 });

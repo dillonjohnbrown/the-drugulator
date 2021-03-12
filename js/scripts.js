@@ -1,32 +1,50 @@
 var data, drugValue1, drugValue2;
 
-$.getJSON( "js/combo_beta.json", function( data ) {
-	var items = [];
-	$.each( data, function( key ) {
-		items.push( "<option value='" + key + "'>"  + key + "</option>" );
-	});
+var getJSON = function(url, callback) {
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', url, true);
+	xhr.responseType = 'json';
+	xhr.onload = function() {
+		var status = xhr.status;
+		if (status === 200) {
+			callback(null, xhr.response);
+		} else {
+			callback(status, xhr.response);
+		}
+	};
+	xhr.send();
+};
+getJSON('js/combo_beta.json', function(err, data) {
+	if (err !== null) {
+		alert('Something went wrong: ' + err);
+	} else {
+		var items = [];
+		$.each( data, function( key ) {
+			items.push( "<option value='" + key + "'>"  + key + "</option>" );
+		});
 	
-	// Create select (dropdown #2) element
-	$( "<select/>", {
-		"id": "drugSelect2",
-		"onchange": "getDrugValue2()",
-		html: items.join( "" )
-	}).insertAfter( "#drugLabel2" );
+		// Create select (dropdown #2) element
+		$( "<select/>", {
+			"id": "drugSelect2",
+			"onchange": "getDrugValue2()",
+			html: items.join( "" )
+		}).insertAfter( "#drugLabel2" );
 	
-	// Create select (dropdown #1) element
-	$( "<select/>", {
-		"id": "drugSelect1",
-		"onchange": "getDrugValue1()",
-		html: items.join( "" )
-	}).insertAfter( "#drugLabel1" );
+		// Create select (dropdown #1) element
+		$( "<select/>", {
+			"id": "drugSelect1",
+			"onchange": "getDrugValue1()",
+			html: items.join( "" )
+		}).insertAfter( "#drugLabel1" );
 	
-	// Add placeholders to select elements
-	$('#drugSelect1')
-		.prepend('<option value="" selected disabled hidden">first, select a drug</option>')
-		.val('');
-	$('#drugSelect2')
-		.prepend('<option value="" selected disabled hidden">then select another drug</option>')
-		.val(''); 
+		// Add placeholders to select elements
+		$('#drugSelect1')
+			.prepend('<option value="" selected disabled hidden">first, select a drug</option>')
+			.val('');
+		$('#drugSelect2')
+			.prepend('<option value="" selected disabled hidden">then select another drug</option>')
+			.val(''); 
+	}
 });
 
 // Make sense of TripSit's big JSON file

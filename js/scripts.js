@@ -90,6 +90,9 @@ function compareDrugs() {
 		// Drugs are the same and not in JSON file
 		$("#displayResult").text("Good lookin' son!");
 		$("#displayNote").text("If you take " + drugValue1 + " and more " + drugValue2 + ", well you're just taking one drug now aren't you?");
+	} else if (typeof drugValue2 == 'undefined' || typeof drugValue1 == 'undefined') {
+		// One select elements does not have a value
+		console.log("One of the dropdowns hasn't been clicked");
 	} else {
 		// Drugs are different
 		var drugCombinationResult = data[drugValue1][drugValue2];

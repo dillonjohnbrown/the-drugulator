@@ -1,5 +1,3 @@
-@import "_skeleton.less";
-
 :root {
 	--color-body-background:   #15172F;
 	
@@ -99,7 +97,4 @@ svg {
 }
 .result {
 	min-height: 175px;
-}
-@media (min-width: 550px) {
-	
 }

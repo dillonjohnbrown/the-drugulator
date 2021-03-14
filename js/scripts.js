@@ -76,16 +76,23 @@ function compareDrugs(drug1, drug2) {
 	// console.log({drug2});
 	
 	if (drug1 == drug2) {
-		// Drugs are the same and not in JSON file
+		/*
+			Drugs are the same and not in JSON file
+		*/
 		displayResult.textContent = "Good on you, champion!";
 		displayNote.innerHTML = "If you take <span class='drugChoice drugChoice_1'>" + drug1 + "</span> and more <span class='drugChoice drugChoice_2'>" + drug2 + "</span>, well you're just taking one drug now aren't you?";
 	} else if (drug2 === '' || drug1 === '') {
-		// One select element does not have a value
+		/*
+			One select element does not have a value
+		*/
 		console.log("One of the dropdowns hasn't been clicked");
 	} else {
-		// Drugs are different
+		/*
+			Drugs are different
+		*/
 		var drugCombinationResult = data[drug1][drug2];
 		
+		// Change the big h2 text
 		displayResult.textContent = drugCombinationResult.status;
 		
 		// If specific combination has a note, print it, otherwise clear it

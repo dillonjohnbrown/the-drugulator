@@ -82,7 +82,7 @@ function compareDrugs() {
 		displayResult.textContent = "Goooood lookin' child!";
 		displayNote.textContent = "If you take " + select1_value + " and more " + select2_value + ", well you're just taking one drug now aren't you?";
 	} else if (typeof select2_value == 'undefined' || typeof select1_value == 'undefined') {
-		// One select elements does not have a value
+		// One select element does not have a value
 		// console.log("One of the dropdowns hasn't been clicked");
 	} else {
 		// Drugs are different

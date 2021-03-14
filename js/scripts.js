@@ -23,13 +23,22 @@ function readTextFile(file, callback) {
 }
 
 readTextFile("js/combo_beta.json", function(text) {
-    data = JSON.parse(text);
+	data = JSON.parse(text);
 	
+	// Alphabetize drugs
+	dataOrdered = Object.keys(data).sort().reduce(
+		(obj, key) => {
+			obj[key] = data[key];
+			return obj;
+		}, 
+	  {}
+	);
+
 	var x;
 	
-	for (x in data) {
+	for (x in dataOrdered) {
 		// console.log(data[x]);
-		
+
 		// Create option elements for each drug
       	var opt1 = document.createElement('option');
        	    opt1.value = x;

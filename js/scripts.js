@@ -68,6 +68,9 @@ function getSelectValues() {
 	compareDrugs(select1_value, select2_value);
 }
 
+/*
+	Compare drug choices and print result
+*/
 function compareDrugs(drug1, drug2) {
 	// console.log({drug1});
 	// console.log({drug2});

@@ -79,7 +79,7 @@ function compareDrugs() {
 	
 	if (select1_value == select2_value) {
 		// Drugs are the same and not in JSON file
-		displayResult.textContent = "Good lookin' son!";
+		displayResult.textContent = "Goooood lookin' child!";
 		displayNote.textContent = "If you take " + select1_value + " and more " + select2_value + ", well you're just taking one drug now aren't you?";
 	} else if (typeof select2_value == 'undefined' || typeof select1_value == 'undefined') {
 		// One select elements does not have a value

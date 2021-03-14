@@ -32,9 +32,9 @@ readTextFile("js/combo_beta.json", function(text) {
 		}, 
 	  {}
 	);
-
-	var x;
 	
+	// Deal with select dropdowns
+	var x;
 	for (x in dataOrdered) {
 		// Create option elements for each drug
       	var opt1 = document.createElement('option');

@@ -57,16 +57,9 @@ readTextFile("js/combo_beta.json", function(text) {
 	}
 });
 
-// Get the selected drug from dropdown #1
-function getSelect1_Value() {
+// Get the selected drug from dropdowns
+function getSelectValues() {
 	select1_value = select1.options[select1.selectedIndex].value;
-	
-	// Show result
-	compareDrugs();
-}
-
-// Get the selected drug from dropdown #2
-function getSelect2_Value() {
 	select2_value = select2.options[select2.selectedIndex].value;
 	
 	// Show result
@@ -79,11 +72,11 @@ function compareDrugs() {
 	
 	if (select1_value == select2_value) {
 		// Drugs are the same and not in JSON file
-		displayResult.textContent = "Goooood lookin' child!";
-		displayNote.textContent = "If you take " + select1_value + " and more " + select2_value + ", well you're just taking one drug now aren't you?";
-	} else if (typeof select2_value == 'undefined' || typeof select1_value == 'undefined') {
+		displayResult.textContent = "Good on you, champion!";
+		displayNote.innerHTML = "If you take <span class='drugChoice drugChoice_1'>" + select1_value + "</span> and more <span class='drugChoice drugChoice_2'>" + select2_value + "</span>, well you're just taking one drug now aren't you?";
+	} else if (select2_value === '' || select1_value === '') {
 		// One select element does not have a value
-		// console.log("One of the dropdowns hasn't been clicked");
+		console.log("One of the dropdowns hasn't been clicked");
 	} else {
 		// Drugs are different
 		var drugCombinationResult = data[select1_value][select2_value];

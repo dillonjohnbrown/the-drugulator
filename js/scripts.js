@@ -37,8 +37,6 @@ readTextFile("js/combo_beta.json", function(text) {
 	var x;
 	
 	for (x in dataOrdered) {
-		// console.log(data[x]);
-
 		// Create option elements for each drug
       	var opt1 = document.createElement('option');
        	    opt1.value = x;

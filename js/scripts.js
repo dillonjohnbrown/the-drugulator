@@ -4,8 +4,6 @@ var label2 = document.getElementById('label2');
 var select1 = document.getElementById('select1');
 var select2 = document.getElementById('select2');
 
-var select1_value, select2_value;
-
 var displayResult = document.getElementById('displayResult');
 var displayNote   = document.getElementById('displayNote');
 /*
@@ -55,7 +53,7 @@ readTextFile("js/combo_beta.json", function(text) {
 		select1.value="";
 		select2.value="";
 		
-		console.log(x);
+		// console.log(x);
 	}
 });
 
@@ -67,23 +65,23 @@ function getSelectValues() {
 	select2_value = select2.options[select2.selectedIndex].value;
 	
 	// Show result
-	compareDrugs();
+	compareDrugs(select1_value, select2_value);
 }
 
-function compareDrugs() {
-	// console.log({select1_value});
-	// console.log({select2_value});
+function compareDrugs(drug1, drug2) {
+	console.log({drug1});
+	console.log({drug2});
 	
-	if (select1_value == select2_value) {
+	if (drug1 == drug2) {
 		// Drugs are the same and not in JSON file
 		displayResult.textContent = "Good on you, champion!";
-		displayNote.innerHTML = "If you take <span class='drugChoice drugChoice_1'>" + select1_value + "</span> and more <span class='drugChoice drugChoice_2'>" + select2_value + "</span>, well you're just taking one drug now aren't you?";
-	} else if (select2_value === '' || select1_value === '') {
+		displayNote.innerHTML = "If you take <span class='drugChoice drugChoice_1'>" + drug1 + "</span> and more <span class='drugChoice drugChoice_2'>" + drug2 + "</span>, well you're just taking one drug now aren't you?";
+	} else if (drug2 === '' || drug1 === '') {
 		// One select element does not have a value
 		console.log("One of the dropdowns hasn't been clicked");
 	} else {
 		// Drugs are different
-		var drugCombinationResult = data[select1_value][select2_value];
+		var drugCombinationResult = data[drug1][drug2];
 		
 		displayResult.textContent = drugCombinationResult.status;
 		

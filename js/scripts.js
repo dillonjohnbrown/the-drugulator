@@ -1,63 +1,15 @@
-var data, drugValue1, drugValue2, drugSelect1, drugSelect2;
+var label1 = document.getElementById('label1');
+var label2 = document.getElementById('label2');
+
+var select1 = document.getElementById('select1');
+var select2 = document.getElementById('select2');
+
+var select1_value, select2_value;
 
 var displayResult = document.getElementById('displayResult');
 var displayNote   = document.getElementById('displayNote');
 
-var getJSON = function(url, callback) {
-	var xhr = new XMLHttpRequest();
-	xhr.open('GET', url, true);
-	xhr.responseType = 'json';
-	xhr.onload = function() {
-		var status = xhr.status;
-		if (status === 200) {
-			callback(null, xhr.response);
-		} else {
-			callback(status, xhr.response);
-		}
-	};
-	xhr.send();
-};
-getJSON('js/combo_beta.json', function(err, data) {
-	if (err !== null) {
-		alert('Something went wrong, please reload this page. Error: ' + err);
-	} else {
-		var items = [];
-		$.each( data, function( key ) {
-			items.push( "<option value='" + key + "'>"  + key + "</option>" );
-		});
-	
-		// Create select (dropdown #2) element
-		// TODO replace jQuery with JavaScript
-		$( "<select/>", {
-			"id": "drugSelect2",
-			"onchange": "getDrugValue2()",
-			html: items.join( "" )
-		}).insertAfter( "#drugLabel2" );
-	
-		// Create select (dropdown #1) element
-		// TODO replace jQuery with JavaScript
-		$( "<select/>", {
-			"id": "drugSelect1",
-			"onchange": "getDrugValue1()",
-			html: items.join( "" )
-		}).insertAfter( "#drugLabel1" );
-		
-		// Update variables
-		drugSelect2 = document.getElementById("drugSelect2");
-		drugSelect1 = document.getElementById("drugSelect1");
-	
-		// Add placeholders to select elements
-		$('#drugSelect1')
-			.prepend('<option value="" selected disabled hidden">first, select a drug</option>')
-			.val('');
-		$('#drugSelect2')
-			.prepend('<option value="" selected disabled hidden">then select another drug</option>')
-			.val(''); 
-	}
-});
-
-// Make sense of TripSit's big JSON file
-// I have no clue how this works
+// // Make sense of TripSit's big JSON file
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
@@ -69,40 +21,63 @@ function readTextFile(file, callback) {
     }
     rawFile.send(null);
 }
+
 readTextFile("js/combo_beta.json", function(text) {
     data = JSON.parse(text);
+	
+	var x;
+	
+	for (x in data) {
+		// console.log(data[x]);
+		
+		// Create option elements for each drug
+      	var opt1 = document.createElement('option');
+       	    opt1.value = x;
+       	    opt1.innerHTML = x;
+
+       	select1.appendChild(opt1);
+		select1.value="";
+		
+		// Create option elements for each drug
+      	var opt2 = document.createElement('option');
+       	    opt2.value = x;
+       	    opt2.innerHTML = x;
+
+       	select2.appendChild(opt2);
+		select2.value="";
+	}
 });
 
 // Get the selected drug from dropdown #1
-function getDrugValue1() {
-	drugValue1 = drugSelect1.options[drugSelect1.selectedIndex].value;
+function getSelect1_Value() {
+	select1_value = select1.options[select1.selectedIndex].value;
 	
 	// Show result
 	compareDrugs();
 }
 
 // Get the selected drug from dropdown #2
-function getDrugValue2() {
-	drugValue2 = drugSelect2.options[drugSelect2.selectedIndex].value;
+function getSelect2_Value() {
+	select2_value = select2.options[select2.selectedIndex].value;
 	
 	// Show result
 	compareDrugs();
 }
 
 function compareDrugs() {
-	// console.log({drugValue1});
-	// console.log({drugValue2});
+	// console.log({select1_value});
+	// console.log({select2_value});
 	
-	if (drugValue1 == drugValue2) {
+	if (select1_value == select2_value) {
 		// Drugs are the same and not in JSON file
 		displayResult.textContent = "Good lookin' son!";
-		displayNote.textContent = "If you take " + drugValue1 + " and more " + drugValue2 + ", well you're just taking one drug now aren't you?";
-	} else if (typeof drugValue2 == 'undefined' || typeof drugValue1 == 'undefined') {
+		displayNote.textContent = "If you take " + select1_value + " and more " + select2_value + ", well you're just taking one drug now aren't you?";
+	} else if (typeof select2_value == 'undefined' || typeof select1_value == 'undefined') {
 		// One select elements does not have a value
 		// console.log("One of the dropdowns hasn't been clicked");
 	} else {
 		// Drugs are different
-		var drugCombinationResult = data[drugValue1][drugValue2];
+		var drugCombinationResult = data[select1_value][select2_value];
 		
 		displayResult.textContent = drugCombinationResult.status;
 		

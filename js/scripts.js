@@ -92,7 +92,7 @@ function compareDrugs() {
 		
 		// If specific combination has a note, print it, otherwise clear it
 		if (typeof drugCombinationResult.note != "undefined") {
-			displayNote.innerText = drugCombinationResult.note;
+			displayNote.innerHTML = drugCombinationResult.note;
 		} else {
 			displayNote.textContent = "";
 		}

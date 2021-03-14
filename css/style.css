@@ -29,9 +29,9 @@ select {
 	width: 100%;
 	max-width: 100%;
 	margin: 0 0 2rem 0;
-	&:last-of-type {
-		margin-bottom: 0;
-	}
+}
+select:last-of-type {
+	margin-bottom: 0;
 }
 .result-accessory,
 .about-accessory,
@@ -53,9 +53,9 @@ label {
 }
 a {
 	color: var(--color-link);
-	&:hover {
-	  color: var(--color-link-hover);
-	}
+}
+a:hover {
+	color: var(--color-link-hover);
 }
 
 .about {

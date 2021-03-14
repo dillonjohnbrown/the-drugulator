@@ -69,8 +69,8 @@ function getSelectValues() {
 }
 
 function compareDrugs(drug1, drug2) {
-	console.log({drug1});
-	console.log({drug2});
+	// console.log({drug1});
+	// console.log({drug2});
 	
 	if (drug1 == drug2) {
 		// Drugs are the same and not in JSON file

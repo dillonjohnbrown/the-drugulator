@@ -8,8 +8,9 @@ var select1_value, select2_value;
 
 var displayResult = document.getElementById('displayResult');
 var displayNote   = document.getElementById('displayNote');
-
-// // Make sense of TripSit's big JSON file
+/*
+	Get TripSit's big JSON file
+*/
 function readTextFile(file, callback) {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
@@ -21,8 +22,8 @@ function readTextFile(file, callback) {
     }
     rawFile.send(null);
 }
-
 readTextFile("js/combo_beta.json", function(text) {
+	// Make sense of the JSON file
 	data = JSON.parse(text);
 	
 	// Alphabetize drugs
@@ -42,20 +43,25 @@ readTextFile("js/combo_beta.json", function(text) {
        	    opt1.value = x;
        	    opt1.innerHTML = x;
 
-       	select1.appendChild(opt1);
-		select1.value="";
-		
-		// Create option elements for each drug
       	var opt2 = document.createElement('option');
        	    opt2.value = x;
        	    opt2.innerHTML = x;
-
+		
+		// Put those options inside the select dropdowns
+		select1.appendChild(opt1);
        	select2.appendChild(opt2);
+		
+		// Reset the dropdowns to their placeholder options
+		select1.value="";
 		select2.value="";
+		
+		console.log(x);
 	}
 });
 
-// Get the selected drug from dropdowns
+/*
+	Get the selected drug from dropdowns
+*/
 function getSelectValues() {
 	select1_value = select1.options[select1.selectedIndex].value;
 	select2_value = select2.options[select2.selectedIndex].value;

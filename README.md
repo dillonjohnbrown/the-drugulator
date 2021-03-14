@@ -1,4 +1,4 @@
-![The Drugulator](https://raw.githubusercontent.com/dillonjohnbrown/the-drugulator/master/logo.png "The Drugulator")
+![The Drugulator](https://raw.githubusercontent.com/dillonjohnbrown/the-drugulator/master/images/logo.png "The Drugulator")
 
 # About The Drugulator
 You can use The Drugulator to learn about combining recreational drugs. You are responsible for your own safety and owe it to yourself to do real research before using or combining drugs. Stay safe and have fun!

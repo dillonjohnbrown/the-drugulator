@@ -98,3 +98,11 @@ svg {
 .result {
 	min-height: 175px;
 }
+.displayExplanations {
+	border-left: 4px solid white;
+	padding-left: 10px;
+	display: none;
+}
+.show {
+	display: block;
+}

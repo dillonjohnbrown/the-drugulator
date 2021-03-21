@@ -6,6 +6,16 @@ var select2 = document.getElementById('select2');
 
 var displayResult = document.getElementById('displayResult');
 var displayNote   = document.getElementById('displayNote');
+
+var allExplanations               = document.getElementsByClassName('displayExplanations');
+var explanation__lowRiskSynergy   = document.getElementById('displayExplanation__lowRiskSynergy');
+var explanation__lowRiskNoSynergy = document.getElementById('displayExplanation__lowRiskNoSynergy');
+var explanation__lowRiskDecrease  = document.getElementById('displayExplanation__lowRiskDecrease');
+var explanation__caution          = document.getElementById('displayExplanation__caution');
+var explanation__unsafe           = document.getElementById('displayExplanation__unsafe');
+var explanation__dangerous        = document.getElementById('displayExplanation__dangerous');
+var explanation__unknown          = document.getElementById('displayExplanation__unknown');
+
 /*
 	Get TripSit's big JSON file
 */
@@ -75,17 +85,22 @@ function compareDrugs(drug1, drug2) {
 	// console.log({drug1});
 	// console.log({drug2});
 	
-	if (drug1 == drug2) {
+	// Hide any and all explanations
+	[].forEach.call(allExplanations, function(el) {
+	    el.classList.remove("show");
+	});
+	
+	if (drug2 === '' || drug1 === '') {
+		/*
+			One select element does not have a value
+		*/
+		console.log("One of the dropdowns hasn't been clicked");
+	} else if (drug1 == drug2) {
 		/*
 			Drugs are the same and not in JSON file
 		*/
 		displayResult.textContent = "Good on you, champion!";
 		displayNote.innerHTML = "If you take <span class='drugChoice drugChoice_1'>" + drug1 + "</span> and more <span class='drugChoice drugChoice_2'>" + drug2 + "</span>, well you're just taking one drug now aren't you?";
-	} else if (drug2 === '' || drug1 === '') {
-		/*
-			One select element does not have a value
-		*/
-		console.log("One of the dropdowns hasn't been clicked");
 	} else {
 		/*
 			Drugs are different
@@ -101,5 +116,35 @@ function compareDrugs(drug1, drug2) {
 		} else {
 			displayNote.textContent = "";
 		}
+
+		// Show and hide generic details
+		switch (drugCombinationResult.status) {
+			case 'Low Risk & Synergy':
+				explanation__lowRiskSynergy.classList.add('show');
+				break;
+		
+			case 'Low Risk & No Synergy':
+				explanation__lowRiskNoSynergy.classList.add('show');
+				break;
+		
+			case 'Low Risk & Decrease':
+				explanation__lowRiskDecrease.classList.add('show');
+				break;
+		
+			case 'Caution':
+				explanation__caution.classList.add('show');
+				break;
+		
+			case 'Unsafe':
+				explanation__unsafe.classList.add('show');
+				break;
+		
+			case 'Dangerous':
+				explanation__dangerous.classList.add('show');
+				break;
+		
+			default:
+				explanation__unknown.classList.add('show');
+			}
 	}
 }

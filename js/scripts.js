@@ -117,7 +117,7 @@ function compareDrugs(drug1, drug2) {
 			displayNote.textContent = "";
 		}
 
-		// Show and hide generic details
+		// Show and hide generic explanations
 		switch (drugCombinationResult.status) {
 			case 'Low Risk & Synergy':
 				explanation__lowRiskSynergy.classList.add('show');

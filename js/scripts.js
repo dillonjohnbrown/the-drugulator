@@ -145,6 +145,6 @@ function compareDrugs(drug1, drug2) {
 		
 			default:
 				explanation__unknown.classList.add('show');
-			}
+		}
 	}
 }

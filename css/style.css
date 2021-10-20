@@ -34,7 +34,7 @@
 		--color-about-accessory:   #167DFB;
 	
 		--color-link:              #167DFB;
-		--color-link-hover:        #eeca94;
+		--color-link-hover:        #93B7ED;
 
 		--color-border:            #f0f0f0;
 		--color-border-box-shadow: #CCCCCC;
@@ -80,6 +80,7 @@ label {
 }
 a {
 	color: var(--color-link);
+	transition: color 0.5s;
 }
 a:hover {
 	color: var(--color-link-hover);

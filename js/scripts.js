@@ -1,6 +1,3 @@
-var label1 = document.getElementById('label1');
-var label2 = document.getElementById('label2');
-
 var select1 = document.getElementById('select1');
 var select2 = document.getElementById('select2');
 

@@ -64,12 +64,12 @@ readTextFile("js/combo_beta.json", function(text) {
 	Get the selected drug from dropdowns
 */
 function getSelectValues() {
-	const { value: select1_value } = select1.options[select1.selectedIndex];
-	const { value: select2_value } = select2.options[select2.selectedIndex];
-	
+	let select1_value = select1.value;
+	let select2_value = select2.value;
+  
 	// Show result
 	compareDrugs(select1_value, select2_value);
-}
+  }
 
 /*
 	Compare drug choices and print result

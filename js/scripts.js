@@ -41,26 +41,23 @@ readTextFile("js/combo_beta.json", function(text) {
 	);
 	
 	// Deal with select dropdowns
-	var x;
-	for (x in dataOrdered) {
-		// Create option elements for each drug
-      	var opt1 = document.createElement('option');
-       	    opt1.value = x;
-       	    opt1.innerHTML = x;
-
-      	var opt2 = document.createElement('option');
-       	    opt2.value = x;
-       	    opt2.innerHTML = x;
-		
-		// Put those options inside the select dropdowns
-		select1.appendChild(opt1);
-		select2.appendChild(opt2);
+	for (const key in dataOrdered) {
+		if (Object.hasOwnProperty.call(dataOrdered, key)) {
+			const opt1 = document.createElement('option');
+			      opt1.value = key;
+			      opt1.innerHTML = key;
+	  
+			const opt2 = document.createElement('option');
+			      opt2.value = key;
+			      opt2.innerHTML = key;
+	  
+			select1.appendChild(opt1);
+			select2.appendChild(opt2);
+		}
 		
 		// Reset the dropdowns to their placeholder options
-		select1.value="";
-		select2.value="";
-		
-		// console.log(x);
+		select1.value = "";
+		select2.value = "";
 	}
 });
 

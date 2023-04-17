@@ -80,7 +80,7 @@ function compareDrugs(drug1, drug2) {
 	
 	// Hide any and all explanations
 	[].forEach.call(allExplanations, function(el) {
-	    el.classList.remove("show");
+		el.classList.remove("show");
 	});
 	
 	if (drug2 === '' || drug1 === '') {

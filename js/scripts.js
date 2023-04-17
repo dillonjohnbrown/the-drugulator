@@ -36,7 +36,7 @@ readTextFile("js/combo_beta.json", function(text) {
 		(obj, key) => {
 			obj[key] = data[key];
 			return obj;
-		}, 
+		},
 	  {}
 	);
 	
@@ -56,8 +56,7 @@ readTextFile("js/combo_beta.json", function(text) {
 		}
 		
 		// Reset the dropdowns to their placeholder options
-		select1.value = "";
-		select2.value = "";
+		[select1.value, select2.value] = ['', ''];
 	}
 });
 

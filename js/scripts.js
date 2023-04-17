@@ -1,17 +1,17 @@
-var select1 = document.getElementById('select1');
-var select2 = document.getElementById('select2');
+const select1 = document.querySelector('#select1');
+const select2 = document.querySelector('#select2');
 
-var displayResult = document.getElementById('displayResult');
-var displayNote   = document.getElementById('displayNote');
+const displayResult = document.querySelector('#displayResult');
+const displayNote   = document.querySelector('#displayNote');
 
-var allExplanations               = document.getElementsByClassName('displayExplanations');
-var explanation__lowRiskSynergy   = document.getElementById('displayExplanation__lowRiskSynergy');
-var explanation__lowRiskNoSynergy = document.getElementById('displayExplanation__lowRiskNoSynergy');
-var explanation__lowRiskDecrease  = document.getElementById('displayExplanation__lowRiskDecrease');
-var explanation__caution          = document.getElementById('displayExplanation__caution');
-var explanation__unsafe           = document.getElementById('displayExplanation__unsafe');
-var explanation__dangerous        = document.getElementById('displayExplanation__dangerous');
-var explanation__unknown          = document.getElementById('displayExplanation__unknown');
+const allExplanations               = document.querySelectorAll('.displayExplanations');
+const explanation__lowRiskSynergy   = document.querySelector('#displayExplanation__lowRiskSynergy');
+const explanation__lowRiskNoSynergy = document.querySelector('#displayExplanation__lowRiskNoSynergy');
+const explanation__lowRiskDecrease  = document.querySelector('#displayExplanation__lowRiskDecrease');
+const explanation__caution          = document.querySelector('#displayExplanation__caution');
+const explanation__unsafe           = document.querySelector('#displayExplanation__unsafe');
+const explanation__dangerous        = document.querySelector('#displayExplanation__dangerous');
+const explanation__unknown          = document.querySelector('#displayExplanation__unknown');
 
 /*
 	Get TripSit's big JSON file
